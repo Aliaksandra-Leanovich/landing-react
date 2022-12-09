@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import "./App.css";
 import { BlogSection } from "./components/BlogSection/BlogSection";
 import { ConnectSection } from "./components/ConnectSection/ConnectSection";
+import { DropdownSection } from "./components/DropdownSection/DropdownSection";
 import { Footer } from "./components/Footer/Footer";
 import { FormSection } from "./components/FormSection/FormSection";
 import { Header } from "./components/Header/Header";
@@ -15,7 +16,7 @@ function App() {
         <Header />
         <MainSection />
         <ServicesSection />
-        <ConnectSection />
+        <DropdownSection />
         <BlogSection />
         <FormSection />
         <Footer />

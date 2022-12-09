@@ -73,11 +73,10 @@ export const TitleSC = styled.h3`
   text-align: center;
 `;
 export const ContainerOfBlocksSC = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
   justify-content: center;
-
-  column-gap: 100px;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 100px;
   width: 100%;
   margin-top: 80px;
 `;

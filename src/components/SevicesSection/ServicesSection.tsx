@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ConnectSection } from "../ConnectSection/ConnectSection";
 import { ExploreSection } from "../ExploreSection/ExploreSection";
 
 export const ServicesSection = () => {
@@ -6,12 +7,13 @@ export const ServicesSection = () => {
     <SectionSC>
       <Title> Our Services</Title>
       <ExploreSection />
+      <ConnectSection />
     </SectionSC>
   );
 };
 
 export const SectionSC = styled.section`
-  padding: 84px 0 120px;
+  padding: 84px 0 0;
 
   display: flex;
   flex-direction: column;

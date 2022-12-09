@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import React from "react";
-import { isTypeAliasDeclaration } from "typescript";
+import { Link } from "react-router-dom";
+import { Colors } from "../../ui";
+import { Logo } from "../Logo/Logo";
 
 const config = [
   {
@@ -17,7 +18,7 @@ const config = [
     link: "#",
     subcategories: [
       { name: "Home", link: "#" },
-      { name: "Careers", link: "#" },
+      { name: "Careers", link: "#", label: "Hiring!" },
       { name: "Services", link: "#" },
     ],
   },
@@ -38,7 +39,7 @@ export const Footer = () => {
       <WrapperSC>
         <ContainerSC>
           <BlockWithLogoSC>
-            <Logo />
+            <Logo color={Colors.PRIMARY} background={Colors.PRIMARY} />
             <Description>
               Social media validation business model canvas graphical user
               interface launch party creative facebook iPad twitter.
@@ -52,9 +53,12 @@ export const Footer = () => {
                   <CategoryLinkSC>{category.category}</CategoryLinkSC>
                 </a>
                 {category.subcategories.map((subcategory, index) => (
-                  <a href={subcategory.link} key={index}>
+                  <ContainerLinkSC key={index}>
                     <SubcategorydLinkSC>{subcategory.name}</SubcategorydLinkSC>
-                  </a>
+                    {subcategory.label && (
+                      <LabelSC>{subcategory.label}</LabelSC>
+                    )}
+                  </ContainerLinkSC>
                 ))}
               </LinksSC>
             ))}
@@ -64,12 +68,6 @@ export const Footer = () => {
     </StyledFooterSC>
   );
 };
-
-export const Logo = styled.div`
-  width: 162px;
-  height: 42px;
-  background-color: beige;
-`;
 
 export const StyledFooterSC = styled.footer`
   width: 100%;
@@ -136,4 +134,21 @@ export const RightsSC = styled.p`
   color: #777777;
 
   margin-top: 24px;
+`;
+
+export const LabelSC = styled.div`
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 28px;
+
+  color: #0a2640;
+
+  background: #65e4a3;
+  border-radius: 120px;
+  padding: 4px 14px;
+  margin-left: 16px;
+`;
+
+export const ContainerLinkSC = styled.div`
+  display: flex;
 `;

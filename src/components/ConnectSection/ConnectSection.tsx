@@ -61,7 +61,7 @@ export const SectionSC = styled.section`
   justify-content: center;
   align-items: center;
 
-  margin-top: 12px;
+  margin-top: 120px;
 `;
 export const ContainerSC = styled.div`
   max-width: 1920px;
