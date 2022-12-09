@@ -149,6 +149,7 @@ export const AuthorInformation = styled.div`
   display: flex;
   column-gap: 12px;
   align-items: center;
+  margin-top: 20px;
 `;
 export const Name = styled.p`
   font-weight: 400;
