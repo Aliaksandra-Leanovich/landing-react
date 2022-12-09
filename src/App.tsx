@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import "./App.css";
+import { BlogSection } from "./components/BlogSection/BlogSection";
 import { ConnectSection } from "./components/ConnectSection/ConnectSection";
+import { FormSection } from "./components/FormSection/FormSection";
 import { Header } from "./components/Header/Header";
 import { MainSection } from "./components/MainSection/MainSection";
 import { ServicesSection } from "./components/SevicesSection/ServicesSection";
@@ -13,6 +15,8 @@ function App() {
         <MainSection />
         <ServicesSection />
         <ConnectSection />
+        <BlogSection />
+        <FormSection />
       </ContainerSC>
     </WrapperSC>
   );
