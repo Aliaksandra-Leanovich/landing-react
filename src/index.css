@@ -87,14 +87,10 @@ svg {
   max-width: 100%;
 }
 
-input,
+p,
+a,
 button,
-textarea,
-select {
-  font: inherit;
-}
-
-p {
+textarea {
   font-family: "Open Sans", OpenSans, sans-serif;
 }
 
@@ -118,7 +114,6 @@ button {
   background: none;
   cursor: pointer;
   outline: none;
-  font-family: inherit;
 }
 
 ul,
