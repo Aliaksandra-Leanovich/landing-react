@@ -1,18 +1,18 @@
 import { useState } from "react";
 import BackgroundImage from "../../assets/dropdownBackground.svg";
 import { ReactComponent as DropdowmImage } from "../../assets/dropdownImage.svg";
+import { VariantsTypography } from "../../enums/TypographyVariants";
+import Typography from "../../ui/Typography";
 import {
   ContainerImageSC,
   ContainerInformationSC,
   ContainerSC,
   DescriptionBlockSC,
-  DescriptionSC,
   DropdownButtonSC,
   DropdownContainerSC,
   DropdownDescriptionSC,
   DropdownSC,
   DropdownsContainerSC,
-  DropdownTitleSC,
   SectionSC,
 } from "./style";
 
@@ -43,23 +43,27 @@ export const DropdownSection = () => {
 
         <ContainerInformationSC>
           <DescriptionBlockSC>
-            <DescriptionSC>
+            <Typography variant={VariantsTypography.h3}>
               We connect our customers with the best, and help them keep up-and
               stay open.
-            </DescriptionSC>
+            </Typography>
           </DescriptionBlockSC>
 
           <DropdownsContainerSC>
             {config.map((item, index) => (
               <DropdownContainerSC>
                 <DropdownSC key={index}>
-                  <DropdownTitleSC>{item.title}</DropdownTitleSC>
+                  <Typography variant={VariantsTypography.paragraphS}>
+                    {item.title}
+                  </Typography>
                   <DropdownButtonSC onClick={handleClick} isOpen={isOpen}>
                     {item.image}
                   </DropdownButtonSC>
                 </DropdownSC>
                 <DropdownDescriptionSC isOpen={isOpen}>
-                  {item.description}
+                  <Typography variant={VariantsTypography.paragraphXS}>
+                    {item.description}
+                  </Typography>
                 </DropdownDescriptionSC>
               </DropdownContainerSC>
             ))}

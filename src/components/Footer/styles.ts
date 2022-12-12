@@ -15,7 +15,7 @@ export const ContainerSC = styled.div`
   display: flex;
   column-gap: 180px;
 
-  ${media.TABLET} {
+  ${media.LAPTOP} {
     column-gap: 0;
     display: flex;
     flex-direction: column;

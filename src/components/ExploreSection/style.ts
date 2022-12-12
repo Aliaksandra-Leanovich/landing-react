@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { media } from "../../ui";
+import { Colors, media } from "../../ui";
 
 export const SectionSC = styled.section`
   width: 100%;
@@ -30,7 +30,7 @@ export const ContainerOfBlocksSC = styled.div`
   width: 100%;
   margin-top: 80px;
 
-  ${media.TABLET} {
+  ${media.LAPTOP} {
     grid-template-columns: 1fr;
     grid-gap: 0;
     display: flex;
@@ -51,30 +51,28 @@ export const BlockSC = styled.div`
   width: 100%;
 `;
 
-export const TitlOfBlockSC = styled.h4`
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
-  margin-top: 24px;
+export const TitleContainerSC = styled.div`
+  margin: 24px 0 12px;
 `;
 
-export const DescriptionOfBlockSC = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-
-  color: #777777;
-  margin-top: 12px;
-`;
 export const LinkBlockSC = styled.div`
   max-width: 164px;
   width: 100%;
   margin-top: 28px;
-  border-bottom: 1px solid #0a2640;
+  border-bottom: 1px solid ${Colors.PRIMARY};
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  transition: border 0.5s ease-out, color 0.5s ease-out;
+
+  &:hover {
+    border-bottom: 1px solid ${Colors.SECONDARY};
+    p {
+      color: ${Colors.SECONDARY};
+    }
+  }
 `;
 export const LinkSC = styled.a`
   font-weight: 700;

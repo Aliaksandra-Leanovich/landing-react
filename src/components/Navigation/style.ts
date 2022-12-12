@@ -19,13 +19,6 @@ export const Button = styled.button`
 `;
 
 export const LinkSC = styled.a`
-  font-family: "Open Sans";
-
-  font-weight: 600;
-  line-height: 28px;
-
-  color: ${Colors.INFOLIGHT};
-
   cursor: pointer;
   transition: border 0.5s ease-out;
 

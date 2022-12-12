@@ -5,22 +5,20 @@ import AuthorImage3 from "../../assets/blogAuth3.svg";
 import BlogImg2 from "../../assets/blogSection2.svg";
 import BlogImg3 from "../../assets/blogSection3.svg";
 import BlogImg1 from "../../assets/exploreImg1.svg";
+import { VariantsTypography } from "../../enums/TypographyVariants";
+import { Colors } from "../../ui";
+import Typography from "../../ui/Typography";
 import {
   AuthorImageSC,
   AuthorInformation,
   BlockSC,
-  Category,
   CategoryBlockSC,
   ContainerOfBlocksSC,
   ContainerSC,
-  Date,
-  Descripion,
   ImageSC,
   LinkSC,
-  Name,
   SectionSC,
-  Title,
-  TitleSC,
+  TitleContainerSC,
 } from "./style";
 
 const config = [
@@ -85,8 +83,15 @@ export const BlogSection = () => {
   return (
     <SectionSC>
       <ContainerSC>
-        <TitleSC>Our Blog</TitleSC>
-        <Title>Value proposition accelerator product management venture</Title>
+        <Typography variant={VariantsTypography.paragraphS} color={Colors.GRAY}>
+          Our Blog
+        </Typography>
+        <TitleContainerSC>
+          <Typography variant={VariantsTypography.h3}>
+            Value proposition accelerator product management venture
+          </Typography>
+        </TitleContainerSC>
+
         <ContainerOfBlocksSC>
           {itemsToRender.map((block) => (
             <BlockSC>
@@ -94,15 +99,35 @@ export const BlogSection = () => {
                 <ImageSC background={block.image} />
 
                 <CategoryBlockSC>
-                  <Category>{block.category}</Category>
-                  <Date>{block.date}</Date>
+                  <Typography
+                    variant={VariantsTypography.paragraphXSBold}
+                    color={Colors.PRIMARY}
+                  >
+                    {block.category}
+                  </Typography>
+                  <Typography
+                    variant={VariantsTypography.paragraphXS}
+                    color={Colors.GRAY}
+                  >
+                    {block.date}
+                  </Typography>
                 </CategoryBlockSC>
-                <Descripion>{block.description}</Descripion>
+                <Typography
+                  variant={VariantsTypography.paragraphS}
+                  color={Colors.INFODARK}
+                >
+                  {block.description}
+                </Typography>
               </div>
 
               <AuthorInformation>
                 <AuthorImageSC background={block.authorImage} />
-                <Name>{block.authorName}</Name>
+                <Typography
+                  variant={VariantsTypography.paragraphXS}
+                  color={Colors.INFODARK}
+                >
+                  {block.authorName}
+                </Typography>
               </AuthorInformation>
             </BlockSC>
           ))}

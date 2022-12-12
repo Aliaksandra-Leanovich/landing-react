@@ -17,12 +17,13 @@ export const ContainerSC = styled.div`
   max-width: 1400px;
   width: 100%;
 
-  padding: 96px 150px;
+  padding: 96px 100px 96px 150px;
   position: relative;
 `;
 export const TitleContainerSC = styled.div`
   max-width: 716px;
   width: 100%;
+  display: flex;
 `;
 export const TitleSC = styled.h3`
   font-weight: 400;
@@ -37,18 +38,6 @@ export const CustomSwiperSC = styled(Swiper)`
     justify-content: center;
     align-items: center;
   }
-  /* .swiper-button-prev {
-    background-color: aqua;
-    position: absolute;
-    top: -10px;
-    left: -10px;
-  } */
-  .swiper-container-free-mode > .swiper-wrapper {
-    transition-timing-function: linear;
-  }
-  /* .swiper-container {
-    direction: "vertical";
-  } */
 `;
 
 export const ContainerSlideSC = styled.div`
@@ -96,6 +85,25 @@ export const AuthorPositionSC = styled.p`
   color: ${Colors.PRIMARY};
 `;
 export const ContainerSwiperSC = styled.div`
+  padding-right: 50px;
   width: 100%;
   margin-top: 72px;
+
+  position: relative;
+`;
+export const ButtonsContainerSC = styled.div`
+  display: flex;
+  align-self: flex-end;
+
+  column-gap: 28px;
+`;
+
+export const ButtonArrowSC = styled.button`
+  width: 72px;
+`;
+
+export const BlockSC = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;

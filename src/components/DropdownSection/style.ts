@@ -39,7 +39,7 @@ export const ContainerInformationSC = styled.div`
 
   margin-top: 56px;
 
-  ${media.TABLET} {
+  ${media.LAPTOP} {
     column-gap: 0;
     display: flex;
     flex-direction: column;
@@ -63,10 +63,6 @@ export const DropdownsContainerSC = styled.div`
 export const DescriptionBlockSC = styled.div`
   max-width: 500px;
   width: 100%;
-`;
-export const DropdownTitleSC = styled.p`
-  font-size: 20px;
-  line-height: 32px;
 `;
 
 export const DropdownContainerSC = styled.div`

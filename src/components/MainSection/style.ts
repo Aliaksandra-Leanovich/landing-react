@@ -12,7 +12,7 @@ export const ContainerWithTwoBlocksSC = styled.div`
   grid-template-columns: 1fr 0.8fr;
   grid-gap: 140px;
 
-  ${media.TABLET} {
+  ${media.LAPTOP} {
     grid-template-columns: 1fr;
     grid-gap: 0;
     display: flex;
@@ -65,22 +65,7 @@ export const CircleSC = styled.div`
   background: #1c3d5b;
 `;
 
-export const Title = styled.h3`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 72px;
-
-  color: #ffffff;
-`;
-
-export const Description = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-
-  color: #f1f1f1;
-
+export const DescriptionContainerSC = styled.div`
   margin-top: 16px;
 `;
 

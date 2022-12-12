@@ -9,13 +9,6 @@ interface IProps {
   background?: string;
 }
 
-export const TitleSC = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-  color: #777777;
-  text-align: center;
-`;
 export const SectionSC = styled.section`
   width: 100%;
 
@@ -36,11 +29,7 @@ export const ContainerSC = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.h3`
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 72px;
-
+export const TitleContainerSC = styled.div`
   text-align: center;
   margin-top: 12px;
 `;
@@ -55,7 +44,7 @@ export const ContainerOfBlocksSC = styled.div`
   width: 100%;
   margin-top: 80px;
 
-  ${media.TABLET} {
+  ${media.LAPTOP} {
     grid-template-columns: 1fr;
     column-gap: 0;
     display: flex;
@@ -91,37 +80,11 @@ export const CategoryBlockSC = styled.div`
   margin-top: 24px;
 `;
 
-export const Category = styled.p`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 28px;
-
-  color: #0a2640;
-`;
-export const Date = styled.div`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-
-  color: #777777;
-`;
-export const Descripion = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-
-  margin-top: 12px;
-`;
 export const AuthorInformation = styled.div`
   display: flex;
   column-gap: 12px;
   align-items: center;
   margin-top: 20px;
-`;
-export const Name = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
 `;
 
 export const LinkSC = styled.button<IPropsButton>`

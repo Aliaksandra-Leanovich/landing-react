@@ -5,13 +5,14 @@ import { ReactComponent as EyeImg } from "../../assets/eye.svg";
 import { ReactComponent as FeatherImg } from "../../assets/feather.svg";
 import { ReactComponent as SunImg } from "../../assets/sun.svg";
 import { ButtonVariants } from "../../enums/ButtonVariants";
+import { VariantsTypography } from "../../enums/TypographyVariants";
 import { Colors } from "../../ui";
+import Typography from "../../ui/Typography";
 import { Button } from "../Button/Button";
 import {
   AdvantageSC,
   AdvantagesContainerSC,
   CheckImgSC,
-  CheckText,
   Column,
   ContainerBlocksSC,
   ContainerDiagramSC,
@@ -23,12 +24,9 @@ import {
   DiagramBottomSC,
   DiagramTopSC,
   ImageContainerSC,
-  RateDescriptionSC,
-  RateSC,
   SectionSC,
-  TextAdvantageSC,
   TextContainerSC,
-  Title,
+  TitleContainerSC,
 } from "./style";
 
 const config = [
@@ -61,22 +59,37 @@ export const ConnectSection = () => {
               </DiagramBottomSC>
 
               <DescriptionDiagramSC>
-                <RateSC>30%</RateSC>
-                <RateDescriptionSC> More income in June</RateDescriptionSC>
+                <Typography
+                  variant={VariantsTypography.paragraphMBold}
+                  color={Colors.PRIMARY}
+                >
+                  30%
+                </Typography>
+                <Typography
+                  variant={VariantsTypography.subtitle}
+                  color={Colors.PRIMARY}
+                >
+                  More income in June
+                </Typography>
               </DescriptionDiagramSC>
             </ContainerDiagramSC>
           </ContainerImageAndDiagramSC>
 
           <TextContainerSC>
-            <Title>
-              We connect our customers with the best, and help them keep up-and
-              stay open.
-            </Title>
+            <TitleContainerSC>
+              <Typography variant={VariantsTypography.h4}>
+                We connect our customers with the best, and help them keep
+                up-and stay open.
+              </Typography>
+            </TitleContainerSC>
+
             <DescriptionBlockSC>
               {config.map((item) => (
                 <DescriptionSC>
                   <CheckImgSC src={CheckImg} />
-                  <CheckText>{item.text}</CheckText>
+                  <Typography variant={VariantsTypography.paragraphS}>
+                    {item.text}
+                  </Typography>
                 </DescriptionSC>
               ))}
             </DescriptionBlockSC>
@@ -85,16 +98,18 @@ export const ConnectSection = () => {
         </ContainerBlocksSC>
         <ContainerBlocksSC>
           <TextContainerSC>
-            <Title>
+            <Typography variant={VariantsTypography.h4}>
               We connect our customers with the best, and help them keep up-and
               stay open.
-            </Title>
+            </Typography>
             <DescriptionBlockSC>
               <AdvantagesContainerSC>
                 {config.map((item) => (
                   <AdvantageSC>
                     {item.image}
-                    <TextAdvantageSC>{item.text}</TextAdvantageSC>
+                    <Typography variant={VariantsTypography.paragraphS}>
+                      {item.text}
+                    </Typography>
                   </AdvantageSC>
                 ))}
               </AdvantagesContainerSC>

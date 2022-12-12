@@ -1,16 +1,22 @@
-import { Navigation } from "swiper";
+import { useRef } from "react";
+import { Swiper as SwiperType, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { SwiperSlide } from "swiper/react";
 import AthorImage2 from "../../assets/autherComment2.svg";
 import AthorImage1 from "../../assets/authorComment1.svg";
 import AthorImage3 from "../../assets/authorComment3.svg";
+import { ReactComponent as ArrowRight } from "../../assets/arrowRightSlider.svg";
+import { ReactComponent as ArrowLeft } from "../../assets/arrowLeft.svg";
 import {
   AuthImageSC,
   AuthorInfromationSC,
   AuthorNameSC,
   AuthorPositionSC,
   AuthorSliderSC,
+  BlockSC,
+  ButtonArrowSC,
+  ButtonsContainerSC,
   CommentSliderSC,
   ContainerSC,
   ContainerSlideSC,
@@ -31,7 +37,7 @@ const config = [
   },
   {
     comment:
-      "“Learning curve infrastructure value proposition advisor strategy user experience hypotheses investor.”",
+      "“Learning curve infrastructure value proposition advisor advisor strategy user experience hypotheses investor.”",
     authorName: "Severus Snape",
     authorPosition: " Manager @ Slytherin",
     authorImage: AthorImage2,
@@ -52,7 +58,7 @@ const config = [
   },
   {
     comment:
-      "“Learning curve infrastructure value proposition advisor strategy user experience hypotheses investor.”",
+      "“Learning curve infrastructure value proposition advisor advisor strategy user experience hypotheses investor.”",
     authorName: "Severus Snape",
     authorPosition: " Manager @ Slytherin",
     authorImage: AthorImage2,
@@ -67,18 +73,32 @@ const config = [
 ];
 
 export const SliderSection = () => {
+  const swiperRef = useRef<SwiperType>();
   return (
     <SectionSC>
       <ContainerSC>
-        <TitleContainerSC>
-          <TitleSC>
-            An enterprise template to ramp up your company website
-          </TitleSC>
-        </TitleContainerSC>
+        <BlockSC>
+          <TitleContainerSC>
+            <TitleSC>
+              An enterprise template to ramp up your company website
+            </TitleSC>
+          </TitleContainerSC>
+          <ButtonsContainerSC>
+            <ButtonArrowSC onClick={() => swiperRef.current?.slidePrev()}>
+              <ArrowLeft />
+            </ButtonArrowSC>
+            <ButtonArrowSC onClick={() => swiperRef.current?.slideNext()}>
+              <ArrowRight />
+            </ButtonArrowSC>
+          </ButtonsContainerSC>
+        </BlockSC>
+
         <ContainerSwiperSC>
           <CustomSwiperSC
-            navigation={true}
             slidesPerView={1}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             breakpoints={{
               1152: {
                 slidesPerView: 3,

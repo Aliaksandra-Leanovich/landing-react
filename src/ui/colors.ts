@@ -8,6 +8,7 @@ export enum Colors {
   PROGRESSLIGHT = "#8FB6D5",
   PROGRESSDARK = "#95ABBC",
 
+  GRAY = "#777777",
   YELLOW = "#ECAA00",
   RED = "#FC5B00",
   DARKGREEN = "#009D10",

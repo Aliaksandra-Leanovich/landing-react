@@ -2,17 +2,19 @@ import ArrowRight from "../../assets/arrowRight.svg";
 import ExploreImg1 from "../../assets/exploreImg1.svg";
 import ExploreImg2 from "../../assets/exploreImg2.svg";
 import ExploreImg3 from "../../assets/exploreImg3.svg";
+import { VariantsTypography } from "../../enums/TypographyVariants";
+import { Colors } from "../../ui";
+import Typography from "../../ui/Typography";
 import {
   BlockSC,
   ContainerOfBlocksSC,
   ContainerSC,
-  DescriptionOfBlockSC,
   ImageSC,
   LinkBlockSC,
   LinkSC,
   SectionSC,
+  TitleContainerSC,
   TitleSC,
-  TitlOfBlockSC,
 } from "./style";
 
 const config = [
@@ -59,8 +61,18 @@ export const ExploreSection = () => {
           {config.map((item) => (
             <BlockSC>
               <ImageSC src={item.image} alt="explore section" />
-              <TitlOfBlockSC>{item.title}</TitlOfBlockSC>
-              <DescriptionOfBlockSC>{item.description}</DescriptionOfBlockSC>
+              <TitleContainerSC>
+                <Typography variant={VariantsTypography.paragraphM}>
+                  {item.title}
+                </Typography>
+              </TitleContainerSC>
+
+              <Typography
+                variant={VariantsTypography.paragraphS}
+                color={Colors.GRAY}
+              >
+                {item.description}
+              </Typography>
               <LinkBlockSC>
                 <LinkSC href={item.link.link}>{item.link.text}</LinkSC>
                 <img src={item.link.image} alt="arrow" />

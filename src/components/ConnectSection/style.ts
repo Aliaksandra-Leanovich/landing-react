@@ -33,7 +33,7 @@ export const ContainerBlocksSC = styled.div`
 
   margin-bottom: 120px;
 
-  ${media.TABLET} {
+  ${media.LAPTOP} {
     grid-template-columns: 1fr;
     grid-gap: 0;
     display: flex;
@@ -57,10 +57,7 @@ export const TextContainerSC = styled.div`
   width: 100%;
 `;
 
-export const Title = styled.h4`
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 56px;
+export const TitleContainerSC = styled.div`
   margin-top: 124px;
 `;
 
@@ -82,12 +79,6 @@ export const CheckImgSC = styled.img`
   width: 36px;
 `;
 
-export const CheckText = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-`;
-
 export const Block = styled.div`
   background-color: #bbbbbb;
 
@@ -102,7 +93,7 @@ export const AdvantagesContainerSC = styled.div`
 export const AdvantageSC = styled.div`
   display: flex;
   align-items: center;
-
+  column-gap: 12px;
   max-width: 500px;
   width: 100%;
   height: 68px;
@@ -135,12 +126,7 @@ export const AdvantageSC = styled.div`
     }
   }
 `;
-export const TextAdvantageSC = styled.p`
-  font-weight: 600;
-  line-height: 28px;
 
-  margin-left: 12px;
-`;
 export const ContainerImageAndDiagramSC = styled.div`
   position: relative;
   max-width: 494px;
@@ -180,21 +166,6 @@ export const DiagramBottomSC = styled.div`
 
 export const DescriptionDiagramSC = styled.div`
   margin-top: 20px;
-`;
-export const RateSC = styled.h4`
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
-
-  ${Colors.PRIMARY}
-`;
-
-export const RateDescriptionSC = styled.h5`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-
-  ${Colors.PRIMARY}
 `;
 
 export const Column = styled.div<IProps>`

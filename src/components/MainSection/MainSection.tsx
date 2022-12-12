@@ -1,4 +1,7 @@
 import { ButtonVariants } from "../../enums/ButtonVariants";
+import { VariantsTypography } from "../../enums/TypographyVariants";
+import { Colors } from "../../ui";
+import Typography from "../../ui/Typography";
 import { Button } from "../Button/Button";
 import {
   Block,
@@ -7,9 +10,7 @@ import {
   ContainerDescriptionSC,
   ContainerSC,
   ContainerWithTwoBlocksSC,
-  Description,
   MainContainerSC,
-  Title,
   WrapperSC,
 } from "./style";
 
@@ -20,12 +21,23 @@ export const MainSection = () => {
         <ContainerSC>
           <ContainerWithTwoBlocksSC>
             <ContainerDescriptionSC>
-              <Title>Save time by building fast with Boldo Template</Title>
-              <Description>
-                Funding handshake buyer business-to-business metrics iPad
-                partnership. First mover advantage innovator success deployment
-                non-disclosure.
-              </Description>
+              <Typography
+                variant={VariantsTypography.h3}
+                color={Colors.INFOLIGHT}
+              >
+                Save time by building fast with Boldo Template
+              </Typography>
+              <ContainerDescriptionSC>
+                <Typography
+                  variant={VariantsTypography.paragraphXS}
+                  color="#f1f1f1"
+                >
+                  Funding handshake buyer business-to-business metrics iPad
+                  partnership. First mover advantage innovator success
+                  deployment non-disclosure.
+                </Typography>
+              </ContainerDescriptionSC>
+
               <ContainerButtonsSC>
                 <Button variant={ButtonVariants.secondary}>Buy template</Button>
                 <Button variant={ButtonVariants.primaryWithBorder}>
