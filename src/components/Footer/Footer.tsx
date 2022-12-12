@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
 import { Colors } from "../../ui";
 import { Logo } from "../Logo/Logo";
 
@@ -75,7 +74,7 @@ export const StyledFooterSC = styled.footer`
 
 export const WrapperSC = styled.div`
   width: 100%;
-  max-width: 1920px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 100px;
 `;

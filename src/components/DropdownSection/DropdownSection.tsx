@@ -1,21 +1,44 @@
 import styled from "@emotion/styled";
-import React from "react";
+import BackgroundImage from "../../assets/dropdownBackground.svg";
+import { ReactComponent as DropdowmImage } from "../../assets/dropdownImage.svg";
+
+interface IProps {
+  background: string;
+}
+
+const config = [
+  {
+    title: "We connect our customers with the best?",
+    description: "",
+  },
+  {
+    title: "Android research & development rockstar? ",
+    description: " ",
+  },
+];
 
 export const DropdownSection = () => {
   return (
     <SectionSC>
       <ContainerSC>
-        <ContainerImageSC></ContainerImageSC>
+        <ContainerImageSC background={BackgroundImage} />
 
         <ContainerInformationSC>
-          <DescriptionBlock>
-            <Description>
+          <DescriptionBlockSC>
+            <DescriptionSC>
               We connect our customers with the best, and help them keep up-and
               stay open.
-            </Description>
-          </DescriptionBlock>
+            </DescriptionSC>
+          </DescriptionBlockSC>
 
-          <DropdownsSC></DropdownsSC>
+          <DropdownsContainerSC>
+            {config.map((item) => (
+              <DropdownSC>
+                <DropdownTitleSC>{item.title}</DropdownTitleSC>
+                <DropdowmImage />
+              </DropdownSC>
+            ))}
+          </DropdownsContainerSC>
         </ContainerInformationSC>
       </ContainerSC>
     </SectionSC>
@@ -30,22 +53,21 @@ export const SectionSC = styled.section`
   align-items: center;
 `;
 export const ContainerSC = styled.div`
-  max-width: 1920px;
+  max-width: 1400px;
   width: 100%;
 
   padding: 124px 170px 0;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
 `;
 
-export const ContainerImageSC = styled.div`
+export const ContainerImageSC = styled.div<IProps>`
   border-radius: 24px;
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   height: 403px;
 
-  background-color: #7e7e7e24;
+  background-image: url(${({ background }) => background});
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const ContainerInformationSC = styled.div`
@@ -54,18 +76,35 @@ export const ContainerInformationSC = styled.div`
 
   margin-top: 56px;
 `;
-export const Description = styled.p`
-  font-weight: 400;
+export const DescriptionSC = styled.p`
   font-size: 36px;
   line-height: 56px;
 `;
 
-export const DropdownsSC = styled.div`
-  width: 500px;
-  height: 140px;
-  background-color: #a1a1a168;
-`;
-export const DescriptionBlock = styled.div`
+export const DropdownsContainerSC = styled.div`
   max-width: 500px;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+`;
+export const DescriptionBlockSC = styled.div`
+  max-width: 500px;
+  width: 100%;
+`;
+export const DropdownTitleSC = styled.p`
+  font-size: 20px;
+  line-height: 32px;
+`;
+
+export const DropdownSC = styled.div`
+  width: 100%;
+  padding-bottom: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #c4c4c4;
 `;

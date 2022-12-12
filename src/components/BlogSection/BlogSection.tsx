@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import ExploreImg1 from "../../assets/exploreImg1.svg";
+import BlogImg1 from "../../assets/exploreImg1.svg";
+import BlogImg2 from "../../assets/blogSection2.svg";
+import BlogImg3 from "../../assets/blogSection3.svg";
+import AuthorImage1 from "../../assets/blogAuth1.svg";
+import AuthorImage2 from "../../assets/blogAuth2.svg";
+import AuthorImage3 from "../../assets/blogAuth3.svg";
 
 const config = [
   {
@@ -7,6 +12,8 @@ const config = [
     date: "November 22, 2021",
     description: "Pitch termsheet backing validation focus release.",
     authorName: "Chandler Bing",
+    authorImage: AuthorImage1,
+    image: BlogImg1,
   },
   {
     category: "Category",
@@ -14,6 +21,8 @@ const config = [
     description:
       "Seed round direct mailing non-disclosure agreement graphical user interface rockstar.",
     authorName: "Rachel Green",
+    authorImage: AuthorImage2,
+    image: BlogImg2,
   },
   {
     category: "Category",
@@ -21,9 +30,13 @@ const config = [
     description:
       "Beta prototype sales iPad gen-z marketing network effects value proposition",
     authorName: "Monica Geller",
+    authorImage: AuthorImage3,
+    image: BlogImg3,
   },
 ];
-
+interface IProps {
+  background?: string;
+}
 export const BlogSection = () => {
   return (
     <SectionSC>
@@ -34,7 +47,8 @@ export const BlogSection = () => {
           {config.map((block) => (
             <BlockSC>
               <div>
-                <ImageSC>{/* <ExploreImg1 /> */}</ImageSC>
+                <ImageSC background={block.image} />
+
                 <CategoryBlockSC>
                   <Category>{block.category}</Category>
                   <Date>{block.date}</Date>
@@ -43,7 +57,7 @@ export const BlogSection = () => {
               </div>
 
               <AuthorInformation>
-                <Img>img</Img>
+                <AuthorImageSC background={block.authorImage} />
                 <Name>{block.authorName}</Name>
               </AuthorInformation>
             </BlockSC>
@@ -73,7 +87,7 @@ export const SectionSC = styled.section`
   margin-top: 158px;
 `;
 export const ContainerSC = styled.div`
-  max-width: 1920px;
+  max-width: 1400px;
   width: 100%;
 
   padding: 0 100px;
@@ -101,12 +115,15 @@ export const ContainerOfBlocksSC = styled.div`
   margin-top: 80px;
 `;
 
-export const ImageSC = styled.div`
-  width: 300px;
-  /* background-image: ${ExploreImg1}; */
+export const ImageSC = styled.div<IProps>`
+  width: 100%;
+  max-width: 300px;
   height: 209px;
+
   border-radius: 12px;
-  background-color: #333434;
+  background-image: url(${({ background }) => background});
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const BlockSC = styled.div`
@@ -156,12 +173,6 @@ export const Name = styled.p`
   font-size: 16px;
   line-height: 28px;
 `;
-export const Img = styled.div`
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: black;
-`;
 
 export const LinkSC = styled.button`
   margin-top: 84px;
@@ -174,4 +185,12 @@ export const LinkSC = styled.button`
 
   border: 2px solid #0a2640;
   border-radius: 56px;
+`;
+export const AuthorImageSC = styled.div<IProps>`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-image: url(${({ background }) => background});
+  background-position: center;
+  background-repeat: no-repeat;
 `;

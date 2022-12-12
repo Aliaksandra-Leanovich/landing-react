@@ -29,10 +29,10 @@ export const SectionSC = styled.section`
   margin-top: 124px;
 `;
 export const ContainerSC = styled.div`
-  max-width: 1220px;
+  max-width: 1250px;
   width: 100%;
 
-  padding: 72px 242px;
+  padding: 72px 100px;
 
   background-color: ${Colors.PRIMARY};
   border-radius: 12px;

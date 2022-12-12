@@ -30,7 +30,7 @@ export const StyledHeaderSC = styled.header`
 `;
 export const WrapperSC = styled.div`
   width: 100%;
-  max-width: 1920px;
+  max-width: 1400px;
   margin: 0 auto;
   margin-top: 56px;
   padding: 0 100px 26px;

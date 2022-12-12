@@ -35,7 +35,7 @@ export const MainSection = () => {
 };
 
 export const ContainerSC = styled.div`
-  max-width: 1920px;
+  max-width: 1400px;
   width: 100%;
 
   padding: 162px 100px 64px;

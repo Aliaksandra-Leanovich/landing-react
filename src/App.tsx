@@ -8,6 +8,7 @@ import { FormSection } from "./components/FormSection/FormSection";
 import { Header } from "./components/Header/Header";
 import { MainSection } from "./components/MainSection/MainSection";
 import { ServicesSection } from "./components/SevicesSection/ServicesSection";
+import { SliderSection } from "./components/SliderSection/SliderSection";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <MainSection />
         <ServicesSection />
+        <SliderSection />
         <DropdownSection />
         <BlogSection />
         <FormSection />
@@ -28,22 +30,11 @@ function App() {
 export default App;
 
 const ContainerSC = styled.div`
-  /* max-width: 1920px; */
   width: 100%;
   margin: 0 auto;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
-  /* padding: 0 100px; */
 `;
 const WrapperSC = styled.div`
-  /* max-width: 1920px;
-  width: 100%;
-  margin: 0 auto; */
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  /* padding: 0 100px; */
 `;

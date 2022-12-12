@@ -61,7 +61,7 @@ export const SectionSC = styled.section`
   margin-top: 12px;
 `;
 export const ContainerSC = styled.div`
-  max-width: 1920px;
+  max-width: 1400px;
   width: 100%;
 
   padding: 0 100px;

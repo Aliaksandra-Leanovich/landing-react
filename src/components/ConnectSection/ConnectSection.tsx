@@ -4,6 +4,9 @@ import ConnectImg2 from "../../assets/connectImg2.svg";
 import CheckImg from "../../assets/checkImg.svg";
 import { Button } from "../Button/Button";
 import { ButtonVariants } from "../../enums/ButtonVariants";
+import { ReactComponent as FeatherImg } from "../../assets/feather.svg";
+import { ReactComponent as SunImg } from "../../assets/sun.svg";
+import { ReactComponent as EyeImg } from "../../assets/eye.svg";
 
 export const ConnectSection = () => {
   return (
@@ -42,7 +45,29 @@ export const ConnectSection = () => {
               stay open.
             </Title>
             <DescriptionBlockSC>
-              <Block />
+              <AdvantagesContainerSC>
+                <AdvantageSC>
+                  <FeatherImg />
+
+                  <TextAdvantageSC>
+                    We connect our customers with the best.
+                  </TextAdvantageSC>
+                </AdvantageSC>
+                <AdvantageSC>
+                  <EyeImg />
+
+                  <TextAdvantageSC>
+                    Advisor success customer launch party.
+                  </TextAdvantageSC>
+                </AdvantageSC>
+                <AdvantageSC>
+                  <SunImg />
+
+                  <TextAdvantageSC>
+                    Business-to-consumer long tail.
+                  </TextAdvantageSC>
+                </AdvantageSC>
+              </AdvantagesContainerSC>
             </DescriptionBlockSC>
           </TextContainerSC>
           <ImageContainerSC>
@@ -64,16 +89,18 @@ export const SectionSC = styled.section`
   margin-top: 120px;
 `;
 export const ContainerSC = styled.div`
-  max-width: 1920px;
+  max-width: 1400px;
   width: 100%;
 
   padding: 0 100px;
 `;
 
 export const ContainerBlocksSC = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  column-gap: 150px;
 
   margin-bottom: 120px;
 `;
@@ -85,7 +112,10 @@ export const ImageSC = styled.img`
   width: 100%;
 `;
 
-export const TextContainerSC = styled.div``;
+export const TextContainerSC = styled.div`
+  max-width: 500px;
+  width: 100%;
+`;
 
 export const Title = styled.h4`
   font-weight: 400;
@@ -122,4 +152,48 @@ export const Block = styled.div`
 
   width: 500px;
   height: 252px;
+`;
+export const AdvantagesContainerSC = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+`;
+export const AdvantageSC = styled.div`
+  display: flex;
+  align-items: center;
+
+  max-width: 500px;
+  width: 100%;
+  height: 68px;
+  padding: 0 20px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+
+  svg {
+    path {
+      stroke: #000;
+    }
+  }
+
+  &:hover {
+    background: #0a2640;
+
+    p {
+      color: #fff;
+    }
+
+    svg {
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+`;
+export const TextAdvantageSC = styled.p`
+  font-weight: 600;
+  line-height: 28px;
+
+  margin-left: 12px;
 `;
