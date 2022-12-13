@@ -1,6 +1,5 @@
-import { LinkVariants, TypographyVariants } from "../../enums";
+import { LinkVariants } from "../../enums";
 import { routes } from "../../routes";
-import { Colors, Typography } from "../../ui";
 import { Link } from "../Link";
 import { ContainerSC, LinkSC } from "./style";
 
@@ -23,14 +22,9 @@ const config = [
 export const Navigation = () => {
   return (
     <ContainerSC>
-      {config.map((item) => (
-        <LinkSC href={item.href}>
-          <Typography
-            variant={TypographyVariants.paragraphXSBold}
-            color={Colors.INFOLIGHT}
-          >
-            {item.title}
-          </Typography>
+      {config.map((item, index) => (
+        <LinkSC href={item.href} key={index}>
+          {item.title}
         </LinkSC>
       ))}
 

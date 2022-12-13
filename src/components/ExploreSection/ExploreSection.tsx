@@ -58,8 +58,8 @@ export const ExploreSection = () => {
           Handshake infographic mass market crowdfunding iteration.
         </TitleSC>
         <ContainerOfBlocksSC>
-          {config.map((item) => (
-            <BlockSC>
+          {config.map((item, index) => (
+            <BlockSC key={index}>
               <ImageSC src={item.image} alt="explore section" />
               <TitleContainerSC>
                 <Typography variant={TypographyVariants.paragraphM}>

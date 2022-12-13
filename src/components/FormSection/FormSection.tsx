@@ -7,19 +7,36 @@ import { Button } from "../Button";
 import { Input } from "../Input";
 import { IUserForm } from "./types";
 import { ContainerInputSC, ContainerSC, FormSC, SectionSC } from "./style";
+import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../utils/firebase";
 
 export const FormSection = () => {
   const {
     register,
     handleSubmit,
     clearErrors,
+    getValues,
     control,
     formState: { errors },
   } = useForm<IUserForm>({
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = () => {};
+  const [email, setEmail] = useState("");
+  const addTodo = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        user: email,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+  const onSubmit = () => {
+    addTodo();
+  };
 
   return (
     <SectionSC>
@@ -37,7 +54,7 @@ export const FormSection = () => {
                   type="email"
                   label="email"
                   value={value}
-                  onChange={onChange}
+                  onChange={(e) => setEmail(e.target.value)}
                   errors={errors.email?.message}
                   register={register}
                   placeholder="Enter your email"

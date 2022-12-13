@@ -18,29 +18,29 @@ import {
 const config = [
   {
     category: "Landings",
-    link: "#",
+    link: "#products",
     subcategories: [
-      { name: "Home", link: "#" },
-      { name: "Products", link: "#" },
-      { name: " Services", link: "#" },
+      { name: "Home", link: "#products" },
+      { name: "Products", link: "#products" },
+      { name: " Services", link: "#services" },
     ],
   },
   {
     category: "Company",
-    link: "#",
+    link: "#services",
     subcategories: [
-      { name: "Home", link: "#" },
-      { name: "Careers", link: "#", label: "Hiring!" },
-      { name: "Services", link: "#" },
+      { name: "Home", link: "#blog" },
+      { name: "Careers", link: "#products", label: "Hiring!" },
+      { name: "Services", link: "#services" },
     ],
   },
   {
     category: "Resources",
-    link: "#",
+    link: "#blog",
     subcategories: [
-      { name: "Blog", link: "#" },
-      { name: "Products", link: "#" },
-      { name: "Services", link: "#" },
+      { name: "Blog", link: "#blog" },
+      { name: "Products", link: "#products" },
+      { name: "Services", link: "#services" },
     ],
   },
 ];
@@ -61,9 +61,9 @@ export const Footer = () => {
           <BlockWithLinksSC>
             {config.map((category, index) => (
               <LinksSC key={index}>
-                <a href={category.link} key={index}>
-                  <CategoryLinkSC>{category.category}</CategoryLinkSC>
-                </a>
+                <CategoryLinkSC href={category.link} key={index}>
+                  {category.category}
+                </CategoryLinkSC>
                 {category.subcategories.map((subcategory, index) => (
                   <ContainerLinkSC key={index}>
                     <SubcategorydLinkSC>{subcategory.name}</SubcategorydLinkSC>

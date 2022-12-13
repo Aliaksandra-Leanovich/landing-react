@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Keyboard, Mousewheel } from "swiper";
+import { Keyboard, Mousewheel, Autoplay } from "swiper";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ReactComponent as BoldoLogo } from "../../assets/BoldoLogo.svg";
@@ -14,14 +14,20 @@ export const SliderLogos = () => {
         slidesPerView={3}
         spaceBetween={66}
         keyboard={true}
+        // autoplay={{
+        //   delay: 1000,
+        //   disableOnInteraction: false,
+        // }}
+        speed={3000}
+        centeredSlides={true}
+        watchSlidesProgress={true}
         breakpoints={{
           1152: {
             slidesPerView: 6,
           },
         }}
         loop={true}
-        loopFillGroupWithBlank={true}
-        modules={[Mousewheel, Keyboard]}
+        modules={[Mousewheel, Keyboard, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -60,22 +66,18 @@ export const SliderLogos = () => {
 };
 
 export const CustomSwiperSC = styled(Swiper)`
-  width: 100%;
-  /* color: rgb(10, 38, 64); */
-  /* background: linear-gradient(
-    to left,
-    rgba(117, 117, 117, 0.002) 80%,
-    rgba(235, 235, 235, 0.1) 100%
-  ); */
-  background: linear-gradient(
-    to left,
-    rgba(117, 117, 117, 0.002) 80%,
-    rgb(10, 38, 64) 100%
-  );
-  /* background: linear-gradient(to right, #eeeeeed2 100%, #eee 20%); */
+  .swiper-slide {
+    opacity: 0.4;
+  }
 
-  /* inset #757575 0 0 0 0, inset #757575 5px 0 0 5px, inset #757575 0 0 0 0,
-    inset #757575 5px 0 0 5px; */
+  .swiper-slide-visible {
+    opacity: 1;
+  }
+  .swiper-slide-active {
+    opacity: 1;
+  }
+
+  width: 100%;
 `;
 export const LogoContainerSC = styled.div`
   width: 144px;

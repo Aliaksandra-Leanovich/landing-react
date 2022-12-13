@@ -51,7 +51,7 @@ export const SubcategorydLinkSC = styled.p`
   }
 `;
 
-export const CategoryLinkSC = styled.p`
+export const CategoryLinkSC = styled.a`
   font-weight: 700;
   font-size: 20px;
   line-height: 32px;
@@ -62,7 +62,7 @@ export const CategoryLinkSC = styled.p`
     color: ${Colors.SECONDARY};
   }
 `;
-export const LinksSC = styled.p`
+export const LinksSC = styled.div`
   display: flex;
   flex-direction: column;
 

@@ -73,7 +73,7 @@ const variantStyles = (variant = LinkVariants.primaryLarge) =>
     `,
   }[variant]);
 
-export const LinkSC = styled.a<Pick<ILinkProps, "variant">>`
+export const LinkSC = styled.p<Pick<ILinkProps, "variant">>`
   ${({ variant }) => variantStyles(variant)}
 
   display: inline-block;

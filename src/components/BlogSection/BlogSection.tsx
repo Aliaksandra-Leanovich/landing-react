@@ -92,8 +92,8 @@ export const BlogSection = () => {
         </TitleContainerSC>
 
         <ContainerOfBlocksSC>
-          {itemsToRender.map((block) => (
-            <BlockSC>
+          {itemsToRender.map((block, index) => (
+            <BlockSC key={index}>
               <div>
                 <ImageSC background={block.image} />
 

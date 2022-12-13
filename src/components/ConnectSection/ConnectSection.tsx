@@ -90,8 +90,8 @@ export const ConnectSection = () => {
             </TitleContainerSC>
 
             <DescriptionBlockSC>
-              {config.map((item) => (
-                <DescriptionSC>
+              {config.map((item, index) => (
+                <DescriptionSC key={index}>
                   <CheckImgSC src={CheckImg} />
                   <Typography variant={TypographyVariants.paragraphS}>
                     {item.text}
@@ -115,8 +115,8 @@ export const ConnectSection = () => {
 
             <DescriptionBlockSC>
               <AdvantagesContainerSC>
-                {config.map((item) => (
-                  <AdvantageSC>
+                {config.map((item, index) => (
+                  <AdvantageSC key={index}>
                     {item.image}
                     <Typography variant={TypographyVariants.paragraphS}>
                       {item.text}

@@ -10,6 +10,10 @@ export const ContainerSC = styled.div`
 `;
 
 export const LinkSC = styled.a`
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: ${Colors.INFOLIGHT};
   cursor: pointer;
 
   transition: border 0.5s ease-out;
