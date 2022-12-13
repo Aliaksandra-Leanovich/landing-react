@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { BlogSection } from "../components/BlogSection/BlogSection";
 import { DropdownSection } from "../components/DropdownSection/DropdownSection";
 import { Footer } from "../components/Footer/Footer";
@@ -10,27 +9,15 @@ import { SliderSection } from "../components/SliderSection/SliderSection";
 
 export const Home = () => {
   return (
-    <WrapperSC>
-      <ContainerSC>
-        <Header />
-        <MainSection />
-        <ServicesSection />
-        <SliderSection />
-        <DropdownSection />
-        <BlogSection />
-        <FormSection />
-        <Footer />
-      </ContainerSC>
-    </WrapperSC>
+    <>
+      <Header />
+      <MainSection />
+      <ServicesSection />
+      <SliderSection />
+      <DropdownSection />
+      <BlogSection />
+      <FormSection />
+      <Footer />
+    </>
   );
 };
-
-const ContainerSC = styled.div`
-  width: 100%;
-  margin: 0 auto;
-`;
-const WrapperSC = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;

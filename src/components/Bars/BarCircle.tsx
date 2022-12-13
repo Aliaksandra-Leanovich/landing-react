@@ -1,5 +1,4 @@
-import React from "react";
-import { Circles } from "./Circles";
+import { Circles } from "./";
 import {
   CircleMainSC,
   ContainerWithCircleANdRows,

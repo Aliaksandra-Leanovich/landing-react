@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import Typography from "../../ui/Typography";
+import { TypographyVariants } from "../../enums";
+import { Typography } from "../../ui";
 import {
   DropdownButtonSC,
   DropdownContainerSC,
@@ -17,7 +17,7 @@ export const DropdownItem = ({ item }: any) => {
   return (
     <DropdownContainerSC>
       <DropdownSC>
-        <Typography variant={VariantsTypography.paragraphS}>
+        <Typography variant={TypographyVariants.paragraphS}>
           {item.title}
         </Typography>
         <DropdownButtonSC onClick={handleClick} isOpen={isOpen}>
@@ -25,7 +25,7 @@ export const DropdownItem = ({ item }: any) => {
         </DropdownButtonSC>
       </DropdownSC>
       <DropdownDescriptionSC isOpen={isOpen}>
-        <Typography variant={VariantsTypography.paragraphXS}>
+        <Typography variant={TypographyVariants.paragraphXS}>
           {item.description}
         </Typography>
       </DropdownDescriptionSC>

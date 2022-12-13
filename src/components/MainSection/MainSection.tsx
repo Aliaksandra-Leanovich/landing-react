@@ -1,10 +1,9 @@
-import { ButtonVariants } from "../../enums/ButtonVariants";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import { Colors } from "../../ui";
-import Typography from "../../ui/Typography";
-import { Bar } from "../Bars/Bar";
-import { Button } from "../Button/Button";
-import { SliderLogos } from "../SliderLogos/SliderLogos";
+import { LinkVariants, TypographyVariants } from "../../enums";
+import { routes } from "../../routes";
+import { Colors, Typography } from "../../ui";
+import { Bar } from "../Bars";
+import { Link } from "../Link";
+import { SliderLogos } from "../SliderLogos";
 
 import {
   ContainerButtonsSC,
@@ -23,15 +22,15 @@ export const MainSection = () => {
           <ContainerWithTwoBlocksSC>
             <ContainerDescriptionSC>
               <Typography
-                variant={VariantsTypography.h3}
+                variant={TypographyVariants.h3}
                 color={Colors.INFOLIGHT}
               >
                 Save time by building fast with Boldo Template
               </Typography>
               <ContainerDescriptionSC>
                 <Typography
-                  variant={VariantsTypography.paragraphXS}
-                  color="#f1f1f1"
+                  variant={TypographyVariants.paragraphXS}
+                  color={Colors.INFOLIGHT}
                 >
                   Funding handshake buyer business-to-business metrics iPad
                   partnership. First mover advantage innovator success
@@ -40,10 +39,18 @@ export const MainSection = () => {
               </ContainerDescriptionSC>
 
               <ContainerButtonsSC>
-                <Button variant={ButtonVariants.secondary}>Buy template</Button>
-                <Button variant={ButtonVariants.primaryWithBorder}>
+                <Link
+                  to={routes.EXPLORE}
+                  variant={LinkVariants.primaryGreenLarge}
+                >
+                  Buy template
+                </Link>
+                <Link
+                  to={routes.EXPLORE}
+                  variant={LinkVariants.secondaryWhiteLarge}
+                >
                   Explore
-                </Button>
+                </Link>
               </ContainerButtonsSC>
             </ContainerDescriptionSC>
 

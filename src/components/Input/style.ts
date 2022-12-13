@@ -8,6 +8,7 @@ export const StyledInputSC = styled.input`
 
   padding: 12px 32px;
   width: 100%;
+
   border: 2px solid #ffffff;
   border-radius: 240px;
 
@@ -20,8 +21,10 @@ export const ContainerSC = styled.div`
   flex-direction: column;
   row-gap: 16px;
 `;
+
 export const ErrorMessageSC = styled.div`
   position: absolute;
+
   display: flex;
   align-items: center;
 
@@ -34,6 +37,7 @@ export const ErrorMessageSC = styled.div`
     fill: ${Colors.RED};
   }
 `;
+
 export const WarningTextSC = styled.p`
   font-size: 20px;
   line-height: 32px;

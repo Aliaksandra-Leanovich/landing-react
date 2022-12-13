@@ -4,11 +4,11 @@ import ConnectImg2 from "../../assets/connectImg2.svg";
 import { ReactComponent as EyeImg } from "../../assets/eye.svg";
 import { ReactComponent as FeatherImg } from "../../assets/feather.svg";
 import { ReactComponent as SunImg } from "../../assets/sun.svg";
-import { ButtonVariants } from "../../enums/ButtonVariants";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import { Colors } from "../../ui";
-import Typography from "../../ui/Typography";
-import { Button } from "../Button/Button";
+import { LinkVariants, TypographyVariants } from "../../enums";
+import { routes } from "../../routes";
+import { Colors, Typography } from "../../ui";
+import { Link } from "../Link";
+
 import {
   AdvantageSC,
   AdvantagesContainerSC,
@@ -66,13 +66,13 @@ export const ConnectSection = () => {
 
               <DescriptionDiagramSC>
                 <Typography
-                  variant={VariantsTypography.paragraphMBold}
+                  variant={TypographyVariants.paragraphMBold}
                   color={Colors.PRIMARY}
                 >
                   30%
                 </Typography>
                 <Typography
-                  variant={VariantsTypography.subtitle}
+                  variant={TypographyVariants.subtitle}
                   color={Colors.PRIMARY}
                 >
                   More income in June
@@ -83,7 +83,7 @@ export const ConnectSection = () => {
 
           <TextContainerSC>
             <TitleContainerSC>
-              <Typography variant={VariantsTypography.h4}>
+              <Typography variant={TypographyVariants.h4}>
                 We connect our customers with the best, and help them keep
                 up-and stay open.
               </Typography>
@@ -93,19 +93,21 @@ export const ConnectSection = () => {
               {config.map((item) => (
                 <DescriptionSC>
                   <CheckImgSC src={CheckImg} />
-                  <Typography variant={VariantsTypography.paragraphS}>
+                  <Typography variant={TypographyVariants.paragraphS}>
                     {item.text}
                   </Typography>
                 </DescriptionSC>
               ))}
             </DescriptionBlockSC>
-            <Button variant={ButtonVariants.primary}>Start now</Button>
+            <Link to={routes.EXPLORE} variant={LinkVariants.primaryLarge}>
+              Start now
+            </Link>
           </TextContainerSC>
         </ContainerBlocksSC>
         <ContainerBlocksSC>
           <TextContainerSC>
             <TitleContainerSC>
-              <Typography variant={VariantsTypography.h4}>
+              <Typography variant={TypographyVariants.h4}>
                 We connect our customers with the best, and help them keep
                 up-and stay open.
               </Typography>
@@ -116,7 +118,7 @@ export const ConnectSection = () => {
                 {config.map((item) => (
                   <AdvantageSC>
                     {item.image}
-                    <Typography variant={VariantsTypography.paragraphS}>
+                    <Typography variant={TypographyVariants.paragraphS}>
                       {item.text}
                     </Typography>
                   </AdvantageSC>

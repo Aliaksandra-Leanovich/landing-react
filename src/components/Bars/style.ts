@@ -1,16 +1,6 @@
 import styled from "@emotion/styled";
 import { Colors } from "../../ui";
-
-export interface IPropsColumn {
-  height: string;
-  background: string;
-  radius?: string;
-}
-export interface IPropsRow {
-  width?: string;
-  color: string;
-  height?: string;
-}
+import { IPropsColumn, IPropsRow } from "./types";
 
 export const WrapperSC = styled.div`
   max-width: 494px;
@@ -19,7 +9,6 @@ export const WrapperSC = styled.div`
 
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(34.3553px);
-
   border-radius: 15px;
 `;
 
@@ -27,30 +16,32 @@ export const CirclesContainerSc = styled.div`
   display: flex;
   column-gap: 10px;
 `;
+
 export const CircleSC = styled.div<IPropsRow>`
   width: 10px;
   height: 10px;
-  border-radius: 50%;
 
+  border-radius: 50%;
   background-color: ${({ color }) => color};
 `;
 
 export const RowsContainerSC = styled.div`
   margin-top: 40px;
+  row-gap: 24px;
+  padding-left: 14px;
 
   display: flex;
   flex-direction: column;
-  row-gap: 24px;
-  padding-left: 14px;
 `;
 
 export const RowSC = styled.div<IPropsRow>`
   border-radius: 14px;
-  height: ${({ height }) => height};
-
   background-color: ${({ color }) => color};
+
+  height: ${({ height }) => height};
   width: ${({ width }) => width};
 `;
+
 export const Persent = styled.p`
   font-size: 12px;
   color: ${Colors.INFOLIGHT};
@@ -64,10 +55,11 @@ export const RowContainer = styled.div`
 `;
 
 export const Column = styled.div<IPropsColumn>`
-  width: 9px;
-  background-color: ${({ background }) => background};
-  height: ${({ height }) => height};
   border-radius: 12px;
+  background-color: ${({ background }) => background};
+
+  width: 9px;
+  height: ${({ height }) => height};
 `;
 
 export const StyledBarsSC = styled.div`
@@ -86,15 +78,14 @@ export const WrapperVerticalSC = styled.div`
 
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(34.3553px);
-
   border-radius: 15px;
 `;
 
 export const DiagramTopSC = styled.div`
   display: flex;
-
   justify-content: flex-end;
   align-items: flex-end;
+
   grid-gap: 12px;
   margin-top: 16px;
 `;
@@ -102,24 +93,28 @@ export const DiagramBottomSC = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
   grid-gap: 12px;
   padding-left: 2px;
 `;
 
 export const ContainerWithCircleANdRows = styled.div`
   margin-top: 24px;
+  column-gap: 32px;
 
   display: flex;
-  column-gap: 32px;
   align-items: center;
 `;
+
 export const CircleMainSC = styled.div`
-  width: 92px;
   position: relative;
+
+  width: 92px;
   height: 92px;
-  border-radius: 50%;
+
   transform: rotate(-20deg);
 
+  border-radius: 50%;
   background: radial-gradient(${Colors.PRIMARY} 50%, transparent 41%),
     conic-gradient(
       ${Colors.SECONDARY} 0% 33%,
@@ -136,8 +131,8 @@ export const CircleMainSC = styled.div`
 
     width: 66px;
     height: 66px;
-    border-radius: 50%;
 
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.18);
   }
 `;
@@ -148,7 +143,6 @@ export const WrapperCircleSC = styled.div`
 
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(34.3553px);
-
   border-radius: 15px;
 `;
 

@@ -1,8 +1,8 @@
-import { VariantsTypography } from "../../enums/TypographyVariants";
+import { LinkVariants, TypographyVariants } from "../../enums";
 import { routes } from "../../routes";
-import { Colors } from "../../ui";
-import Typography from "../../ui/Typography";
-import { Link, ContainerSC, LinkSC } from "./style";
+import { Colors, Typography } from "../../ui";
+import { Link } from "../Link";
+import { ContainerSC, LinkSC } from "./style";
 
 const config = [
   {
@@ -26,7 +26,7 @@ export const Navigation = () => {
       {config.map((item) => (
         <LinkSC href={item.href}>
           <Typography
-            variant={VariantsTypography.paragraphXSBold}
+            variant={TypographyVariants.paragraphXSBold}
             color={Colors.INFOLIGHT}
           >
             {item.title}
@@ -34,7 +34,9 @@ export const Navigation = () => {
         </LinkSC>
       ))}
 
-      <Link href={routes.LOGIN}>Log in</Link>
+      <Link to={routes.LOGIN} variant={LinkVariants.primaryWhiteSmall}>
+        Log in
+      </Link>
     </ContainerSC>
   );
 };

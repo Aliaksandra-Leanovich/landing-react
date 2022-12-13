@@ -1,6 +1,4 @@
-import { BarCircle } from "./BarCircle";
-import { BarGorizontal } from "./BarGorizontal";
-import { BarVertical } from "./BarVertical";
+import { BarCircle, BarGorizontal, BarVertical } from "./";
 import { BarsBottomSC, StyledBarsSC } from "./style";
 
 export const Bar = () => {

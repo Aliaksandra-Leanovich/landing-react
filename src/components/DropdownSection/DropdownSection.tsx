@@ -1,7 +1,7 @@
 import BackgroundImage from "../../assets/dropdownBackground.svg";
 import { ReactComponent as DropdowmImage } from "../../assets/dropdownImage.svg";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import Typography from "../../ui/Typography";
+import { TypographyVariants } from "../../enums";
+import { Typography } from "../../ui";
 import { DropdownItem } from "./DropdownItem";
 import {
   ContainerImageSC,
@@ -33,7 +33,7 @@ export const DropdownSection = () => {
 
         <ContainerInformationSC>
           <DescriptionBlockSC>
-            <Typography variant={VariantsTypography.h3}>
+            <Typography variant={TypographyVariants.h3}>
               We connect our customers with the best, and help them keep up-and
               stay open.
             </Typography>

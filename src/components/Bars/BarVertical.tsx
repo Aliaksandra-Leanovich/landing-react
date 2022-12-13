@@ -1,4 +1,4 @@
-import { Circles } from "./Circles";
+import { Circles } from "./";
 import {
   Column,
   DiagramBottomSC,

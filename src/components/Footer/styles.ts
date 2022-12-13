@@ -11,6 +11,7 @@ export const WrapperSC = styled.div`
   margin: 0 auto;
   padding: 100px;
 `;
+
 export const ContainerSC = styled.div`
   display: flex;
   column-gap: 180px;
@@ -32,6 +33,7 @@ export const BlockWithLogoSC = styled.div`
   max-width: 300px;
   width: 100%;
 `;
+
 export const BlockWithLinksSC = styled.div`
   display: flex;
   column-gap: 96px;
@@ -48,10 +50,12 @@ export const SubcategorydLinkSC = styled.p`
     color: ${Colors.PRIMARY};
   }
 `;
+
 export const CategoryLinkSC = styled.p`
   font-weight: 700;
   font-size: 20px;
   line-height: 32px;
+
   cursor: pointer;
 
   &:hover {
@@ -60,10 +64,11 @@ export const CategoryLinkSC = styled.p`
 `;
 export const LinksSC = styled.p`
   display: flex;
-  width: 150px;
-  /* width: 100%; */
   flex-direction: column;
+
+  width: 150px;
   row-gap: 32px;
+
   cursor: pointer;
 `;
 
@@ -94,6 +99,7 @@ export const LabelSC = styled.div`
 
   background: #65e4a3;
   border-radius: 120px;
+
   padding: 4px 14px;
   margin-left: 16px;
 `;

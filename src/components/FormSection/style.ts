@@ -10,6 +10,7 @@ export const SectionSC = styled.section`
 
   margin-top: 124px;
 `;
+
 export const ContainerSC = styled.div`
   max-width: 1250px;
   width: 100%;
@@ -18,29 +19,19 @@ export const ContainerSC = styled.div`
 
   background-color: ${Colors.PRIMARY};
   border-radius: 12px;
+
   position: relative;
 `;
+
 export const ContainerInputSC = styled.div`
   max-width: 370px;
   width: 100%;
 `;
+
 export const FormSC = styled.form`
-  margin-top: 50px;
   display: flex;
   justify-content: center;
+
+  margin-top: 50px;
   column-gap: 24px;
 `;
-// export const CircleSC = styled.div`
-//   position: absolute;
-//   display: block;
-
-//   opacity: 0.3;
-//   top: -1120px;
-//   right: 0px;
-//   left: 777px;
-//   top: -789px;
-//   width: 1293px;
-//   height: 1293px;
-//   border-radius: 50%;
-//   background: #1c3d5b;
-// `;

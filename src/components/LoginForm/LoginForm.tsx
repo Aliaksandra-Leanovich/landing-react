@@ -3,15 +3,15 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ButtonVariants } from "../../enums/ButtonVariants";
+import { ButtonVariants } from "../../enums";
 import { getAuthError, validationSchema } from "../../helper";
 import { routes } from "../../routes";
 import { useAppDispatch } from "../../store/hooks";
 import { setUserToken } from "../../store/slices/userSlice";
 import { app } from "../../utils";
-import { Button } from "../Button/Button";
+import { Button } from "../Button";
 import { Input } from "../Input";
-import { IUserForm } from "../types";
+import { IUserForm } from "./types";
 import { ContainerFormSC, StyledFormSC } from "./styles";
 
 export const LoginForm = () => {
@@ -81,7 +81,7 @@ export const LoginForm = () => {
         <Controller
           name="password"
           control={control}
-          render={({ field: { onChange, value, onBlur } }) => (
+          render={({ field: { onChange, value } }) => (
             <Input
               type="password"
               label="password"

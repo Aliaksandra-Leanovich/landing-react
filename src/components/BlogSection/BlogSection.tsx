@@ -5,9 +5,8 @@ import AuthorImage3 from "../../assets/blogAuth3.svg";
 import BlogImg2 from "../../assets/blogSection2.svg";
 import BlogImg3 from "../../assets/blogSection3.svg";
 import BlogImg1 from "../../assets/exploreImg1.svg";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import { Colors } from "../../ui";
-import Typography from "../../ui/Typography";
+import { TypographyVariants } from "../../enums";
+import { Colors, Typography } from "../../ui";
 import {
   AuthorImageSC,
   AuthorInformation,
@@ -83,11 +82,11 @@ export const BlogSection = () => {
   return (
     <SectionSC id="blog">
       <ContainerSC>
-        <Typography variant={VariantsTypography.paragraphS} color={Colors.GRAY}>
+        <Typography variant={TypographyVariants.paragraphS} color={Colors.GRAY}>
           Our Blog
         </Typography>
         <TitleContainerSC>
-          <Typography variant={VariantsTypography.h3}>
+          <Typography variant={TypographyVariants.h3}>
             Value proposition accelerator product management venture
           </Typography>
         </TitleContainerSC>
@@ -100,20 +99,20 @@ export const BlogSection = () => {
 
                 <CategoryBlockSC>
                   <Typography
-                    variant={VariantsTypography.paragraphXSBold}
+                    variant={TypographyVariants.paragraphXSBold}
                     color={Colors.PRIMARY}
                   >
                     {block.category}
                   </Typography>
                   <Typography
-                    variant={VariantsTypography.paragraphXS}
+                    variant={TypographyVariants.paragraphXS}
                     color={Colors.GRAY}
                   >
                     {block.date}
                   </Typography>
                 </CategoryBlockSC>
                 <Typography
-                  variant={VariantsTypography.paragraphS}
+                  variant={TypographyVariants.paragraphS}
                   color={Colors.INFODARK}
                 >
                   {block.description}
@@ -123,7 +122,7 @@ export const BlogSection = () => {
               <AuthorInformation>
                 <AuthorImageSC background={block.authorImage} />
                 <Typography
-                  variant={VariantsTypography.paragraphXS}
+                  variant={TypographyVariants.paragraphXS}
                   color={Colors.INFODARK}
                 >
                   {block.authorName}

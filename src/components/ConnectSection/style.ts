@@ -1,12 +1,6 @@
 import styled from "@emotion/styled";
 import { Colors, media } from "../../ui";
-import { IPropsStyle } from "./types";
-
-interface IProps {
-  background: Colors;
-  height?: string;
-  radius?: string;
-}
+import { IProps, IPropsStyle } from "./types";
 
 export const SectionSC = styled.section`
   width: 100%;
@@ -17,6 +11,7 @@ export const SectionSC = styled.section`
 
   margin-top: 120px;
 `;
+
 export const ContainerSC = styled.div`
   max-width: 1400px;
   width: 100%;
@@ -30,24 +25,27 @@ export const ContainerBlocksSC = styled.div`
   align-items: center;
 
   column-gap: 150px;
-
   margin-bottom: 120px;
 
   ${media.LAPTOP} {
     grid-template-columns: 1fr;
     grid-gap: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 30px;
   }
 `;
+
 export const ImageContainerSC = styled.div<IPropsStyle>`
   width: 494px;
   height: ${({ height }) => height};
+
   background-image: url(${({ background }) => background});
   background-repeat: no-repeat;
 `;
+
 export const ImageSC = styled.img`
   width: 100%;
 `;
@@ -63,9 +61,9 @@ export const TitleContainerSC = styled.div`
 
 export const DescriptionBlockSC = styled.div`
   display: flex;
-  row-gap: 24px;
   flex-direction: column;
 
+  row-gap: 24px;
   margin: 40px 0 56px;
 `;
 export const DescriptionSC = styled.div`
@@ -88,16 +86,19 @@ export const Block = styled.div`
 export const AdvantagesContainerSC = styled.div`
   display: flex;
   flex-direction: column;
+
   row-gap: 24px;
 `;
 export const AdvantageSC = styled.div`
   display: flex;
   align-items: center;
+
   column-gap: 12px;
+  padding: 0 20px;
+
   max-width: 500px;
   width: 100%;
   height: 68px;
-  padding: 0 20px;
 
   background: #ffffff;
   box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.08);
@@ -129,8 +130,10 @@ export const AdvantageSC = styled.div`
 
 export const ContainerImageAndDiagramSC = styled.div`
   position: relative;
+
   max-width: 494px;
   width: 100%;
+
   display: block;
   justify-content: center;
   align-items: center;
@@ -150,17 +153,20 @@ export const ContainerDiagramSC = styled.div`
   box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
 `;
+
 export const DiagramTopSC = styled.div`
   display: flex;
-
   justify-content: flex-end;
   align-items: flex-end;
+
   grid-gap: 12px;
 `;
+
 export const DiagramBottomSC = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
   grid-gap: 12px;
 `;
 
@@ -170,8 +176,9 @@ export const DescriptionDiagramSC = styled.div`
 
 export const Column = styled.div<IProps>`
   width: 12px;
-  background-color: ${({ background }) => background};
   height: ${({ height }) => height};
+
+  background-color: ${({ background }) => background};
   border-radius: ${({ radius }) => radius};
 `;
 
@@ -181,6 +188,7 @@ export const BlockWithCirclSC = styled.div`
   left: 60px;
 
   padding: 48px 56px;
+
   background: ${Colors.INFOLIGHT};
   box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
@@ -204,6 +212,7 @@ export const CircleSC = styled.div`
 export const PersentsBlockSC = styled.div`
   display: flex;
   flex-direction: column;
+
   row-gap: 12px;
   margin-top: 22px;
 `;
@@ -211,11 +220,13 @@ export const PersentsBlockSC = styled.div`
 export const PersentsContainerSC = styled.div`
   display: flex;
   align-items: center;
+
   column-gap: 8px;
 `;
 export const DotSC = styled.div<IProps>`
   width: 5px;
   height: 5px;
+
   border-radius: 50px;
   background-color: ${({ background }) => background};
 `;

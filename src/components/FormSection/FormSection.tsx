@@ -1,15 +1,12 @@
-import { useForm, Controller } from "react-hook-form";
-import { ButtonVariants } from "../../enums/ButtonVariants";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import { Colors } from "../../ui";
-import Typography from "../../ui/Typography";
-import { Button } from "../Button/Button";
-import { Input } from "../Input";
-import { IUserForm } from "../types";
-import { ContainerInputSC, ContainerSC, FormSC, SectionSC } from "./style";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+import { ButtonVariants, TypographyVariants } from "../../enums";
 import { validationSchema } from "../../helper";
-import { useState } from "react";
+import { Colors, Typography } from "../../ui";
+import { Button } from "../Button";
+import { Input } from "../Input";
+import { IUserForm } from "./types";
+import { ContainerInputSC, ContainerSC, FormSC, SectionSC } from "./style";
 
 export const FormSection = () => {
   const {
@@ -27,8 +24,7 @@ export const FormSection = () => {
   return (
     <SectionSC>
       <ContainerSC>
-        {/* <CircleSC /> */}
-        <Typography variant={VariantsTypography.h3} color={Colors.INFOLIGHT}>
+        <Typography variant={TypographyVariants.h3} color={Colors.INFOLIGHT}>
           An enterprise template to ramp up your company website
         </Typography>
         <FormSC onSubmit={handleSubmit(onSubmit)}>

@@ -2,9 +2,9 @@ import ArrowRight from "../../assets/arrowRight.svg";
 import ExploreImg1 from "../../assets/exploreImg1.svg";
 import ExploreImg2 from "../../assets/exploreImg2.svg";
 import ExploreImg3 from "../../assets/exploreImg3.svg";
-import { VariantsTypography } from "../../enums/TypographyVariants";
-import { Colors } from "../../ui";
-import Typography from "../../ui/Typography";
+import { TypographyVariants } from "../../enums";
+import { routes } from "../../routes";
+import { Colors, Typography } from "../../ui";
 import {
   BlockSC,
   ContainerOfBlocksSC,
@@ -25,7 +25,7 @@ const config = [
     link: {
       image: ArrowRight,
       text: "Explore page",
-      link: "#",
+      link: `${routes.EXPLORE}`,
     },
   },
   {
@@ -35,7 +35,7 @@ const config = [
     link: {
       image: ArrowRight,
       text: "Explore page",
-      link: "#",
+      link: `${routes.EXPLORE}`,
     },
   },
   {
@@ -45,7 +45,7 @@ const config = [
     link: {
       image: ArrowRight,
       text: "Explore page",
-      link: "#",
+      link: `${routes.EXPLORE}`,
     },
   },
 ];
@@ -62,19 +62,19 @@ export const ExploreSection = () => {
             <BlockSC>
               <ImageSC src={item.image} alt="explore section" />
               <TitleContainerSC>
-                <Typography variant={VariantsTypography.paragraphM}>
+                <Typography variant={TypographyVariants.paragraphM}>
                   {item.title}
                 </Typography>
               </TitleContainerSC>
 
               <Typography
-                variant={VariantsTypography.paragraphS}
+                variant={TypographyVariants.paragraphS}
                 color={Colors.GRAY}
               >
                 {item.description}
               </Typography>
               <LinkBlockSC>
-                <LinkSC href={item.link.link}>{item.link.text}</LinkSC>
+                <LinkSC to={item.link.link}>{item.link.text}</LinkSC>
                 <img src={item.link.image} alt="arrow" />
               </LinkBlockSC>
             </BlockSC>

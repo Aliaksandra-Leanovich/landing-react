@@ -1,6 +1,6 @@
 import { Colors } from "../../ui";
-import { Logo } from "../Logo/Logo";
-import { Navigation } from "../Navigation/Navigation";
+import { Logo } from "../Logo";
+import { Navigation } from "../Navigation";
 import { ContainerSC, StyledHeaderSC, WrapperSC } from "./style";
 
 export const Header = () => {

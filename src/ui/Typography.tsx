@@ -1,16 +1,16 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
-import { VariantsTypography } from "../enums/TypographyVariants";
+import { TypographyVariants } from "../enums/TypographyVariants";
 import { media } from "./media";
 
 export interface IProps {
-  variant: VariantsTypography;
+  variant: TypographyVariants;
   color?: string;
 }
 interface ITypography {
   color?: string;
-  variant: VariantsTypography;
+  variant: TypographyVariants;
 }
 export const TypographyTypes = {
   h1: "h1",

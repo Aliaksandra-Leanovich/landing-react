@@ -1,4 +1,3 @@
-import React from "react";
 import { CircleSC, CirclesContainerSc } from "./style";
 
 export const Circles = () => {

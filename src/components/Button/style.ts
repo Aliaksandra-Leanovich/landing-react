@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { ButtonVariants } from "../../enums/ButtonVariants";
+import { ButtonVariants } from "../../enums";
 import { Colors } from "../../ui";
 import { IButton } from "./types";
 

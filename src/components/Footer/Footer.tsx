@@ -1,5 +1,5 @@
 import { Colors } from "../../ui";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../Logo";
 import {
   BlockWithLinksSC,
   BlockWithLogoSC,
