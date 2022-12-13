@@ -81,7 +81,7 @@ export const BlogSection = () => {
   const [index, setIndex] = useState(3);
   const itemsToRender = config.slice(0, index);
   return (
-    <SectionSC>
+    <SectionSC id="blog">
       <ContainerSC>
         <Typography variant={VariantsTypography.paragraphS} color={Colors.GRAY}>
           Our Blog

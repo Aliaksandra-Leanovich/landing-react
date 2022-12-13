@@ -45,11 +45,8 @@ export const ContainerOfBlocksSC = styled.div`
   margin-top: 80px;
 
   ${media.LAPTOP} {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(2, 300px);
+    column-gap: 50px;
     row-gap: 40px;
   }
 `;

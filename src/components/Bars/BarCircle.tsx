@@ -14,6 +14,7 @@ export const BarCircle = () => {
       <Circles />
       <ContainerWithCircleANdRows>
         <CircleMainSC />
+
         <RowsCircleContainerSC>
           <RowSC width="72px" color="#95ABBC" height="8px" />
           <RowSC width="68px" color="#95ABBC" height="8px" />

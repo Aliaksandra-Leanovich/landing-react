@@ -18,7 +18,7 @@ import {
 export const MainSection = () => {
   return (
     <MainContainerSC>
-      <WrapperSC>
+      <WrapperSC id="product">
         <ContainerSC>
           <ContainerWithTwoBlocksSC>
             <ContainerDescriptionSC>

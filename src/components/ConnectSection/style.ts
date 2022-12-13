@@ -190,7 +190,15 @@ export const CircleSC = styled.div`
   width: 174px;
   height: 174px;
   border-radius: 50%;
-  border: 24px solid ${Colors.PRIMARY};
+
+  transform: rotate(-20deg);
+
+  background: radial-gradient(${Colors.INFOLIGHT} 50%, transparent 41%),
+    conic-gradient(
+      ${Colors.SECONDARY} 0% 33%,
+      ${Colors.PRIMARY} 33% 66%,
+      ${Colors.LIGHTBLUE} 66% 100%
+    );
 `;
 
 export const PersentsBlockSC = styled.div`

@@ -61,6 +61,21 @@ export const SliderLogos = () => {
 
 export const CustomSwiperSC = styled(Swiper)`
   width: 100%;
+  /* color: rgb(10, 38, 64); */
+  /* background: linear-gradient(
+    to left,
+    rgba(117, 117, 117, 0.002) 80%,
+    rgba(235, 235, 235, 0.1) 100%
+  ); */
+  background: linear-gradient(
+    to left,
+    rgba(117, 117, 117, 0.002) 80%,
+    rgb(10, 38, 64) 100%
+  );
+  /* background: linear-gradient(to right, #eeeeeed2 100%, #eee 20%); */
+
+  /* inset #757575 0 0 0 0, inset #757575 5px 0 0 5px, inset #757575 0 0 0 0,
+    inset #757575 5px 0 0 5px; */
 `;
 export const LogoContainerSC = styled.div`
   width: 144px;

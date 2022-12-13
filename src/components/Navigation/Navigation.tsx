@@ -5,16 +5,16 @@ import { Button, ContainerSC, LinkSC } from "./style";
 
 const config = [
   {
-    href: "#",
+    href: "#product",
     title: "Product",
   },
   {
-    href: "#",
+    href: "#services",
     title: "Services",
   },
 
   {
-    href: "#",
+    href: "#blog",
     title: "About",
   },
 ];

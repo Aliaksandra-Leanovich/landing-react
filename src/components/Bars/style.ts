@@ -115,10 +115,33 @@ export const ContainerWithCircleANdRows = styled.div`
 `;
 export const CircleMainSC = styled.div`
   width: 92px;
+  position: relative;
   height: 92px;
   border-radius: 50%;
-  border: 13px solid ${Colors.SECONDARY};
+  transform: rotate(-20deg);
+
+  background: radial-gradient(${Colors.PRIMARY} 50%, transparent 41%),
+    conic-gradient(
+      ${Colors.SECONDARY} 0% 33%,
+      ${Colors.PRIMARY} 33% 66%,
+      ${Colors.LIGHTBLUE} 66% 100%
+    );
+
+  &:after {
+    content: " ";
+    z-index: 1;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+  }
 `;
+
 export const WrapperCircleSC = styled.div`
   width: 260px;
   padding: 12px 16px 26px;
