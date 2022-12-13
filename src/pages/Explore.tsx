@@ -1,4 +1,4 @@
-import { FormSection } from "../components/FormSection/FormSection";
+import { FormSection } from "../components/FormSection";
 
 export const Explore = () => {
   return (

@@ -1,11 +1,11 @@
-import { BlogSection } from "../components/BlogSection/BlogSection";
-import { DropdownSection } from "../components/DropdownSection/DropdownSection";
-import { Footer } from "../components/Footer/Footer";
-import { FormSection } from "../components/FormSection/FormSection";
-import { Header } from "../components/Header/Header";
-import { MainSection } from "../components/MainSection/MainSection";
-import { ServicesSection } from "../components/SevicesSection/ServicesSection";
-import { SliderSection } from "../components/SliderSection/SliderSection";
+import { BlogSection } from "../components/BlogSection";
+import { DropdownSection } from "../components/DropdownSection";
+import { Footer } from "../components/Footer";
+import { FormSection } from "../components/FormSection";
+import { Header } from "../components/Header";
+import { MainSection } from "../components/MainSection";
+import { ServicesSection } from "../components/SevicesSection";
+import { SliderSection } from "../components/SliderSection";
 
 export const Home = () => {
   return (

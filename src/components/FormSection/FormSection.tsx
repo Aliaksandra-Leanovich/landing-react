@@ -1,21 +1,20 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { addDoc, collection } from "firebase/firestore";
 import { Controller, useForm } from "react-hook-form";
 import { ButtonVariants, TypographyVariants } from "../../enums";
 import { validationSchema } from "../../helper";
 import { Colors, Typography } from "../../ui";
+import { db } from "../../utils/firebase";
 import { Button } from "../Button";
 import { Input } from "../Input";
-import { IUserForm } from "./types";
 import { ContainerInputSC, ContainerSC, FormSC, SectionSC } from "./style";
-import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../utils/firebase";
+import { IUserForm } from "./types";
 
 export const FormSection = () => {
   const {
     register,
     handleSubmit,
-    clearErrors,
+    reset,
     getValues,
     control,
     formState: { errors },
@@ -23,19 +22,21 @@ export const FormSection = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const [email, setEmail] = useState("");
-  const addTodo = async () => {
+  const addUser = async (email: string) => {
     try {
       const docRef = await addDoc(collection(db, "users"), {
         user: email,
       });
       console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    } catch (event) {
+      console.error("Error adding document: ", event);
     }
   };
   const onSubmit = () => {
-    addTodo();
+    reset();
+    const { email } = getValues();
+    // console.log(email);
+    addUser(email);
   };
 
   return (
@@ -54,20 +55,11 @@ export const FormSection = () => {
                   type="email"
                   label="email"
                   value={value}
-                  onChange={(e) => setEmail(e.target.value)}
                   errors={errors.email?.message}
                   register={register}
                   placeholder="Enter your email"
                 />
               )}
-              rules={{
-                required: false,
-                onChange: () => {
-                  if (errors) {
-                    clearErrors("email");
-                  }
-                },
-              }}
             />
           </ContainerInputSC>
 

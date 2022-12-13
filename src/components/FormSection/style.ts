@@ -20,7 +20,7 @@ export const ContainerSC = styled.div`
   background-color: ${Colors.PRIMARY};
   border-radius: 12px;
 
-  position: relative;
+  /* position: relative; */
 `;
 
 export const ContainerInputSC = styled.div`
