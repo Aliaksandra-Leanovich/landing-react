@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { media } from "../../ui";
+import { Colors, media } from "../../ui";
 
 export const StyledFooterSC = styled.footer`
   width: 100%;
@@ -43,12 +43,20 @@ export const SubcategorydLinkSC = styled.p`
   line-height: 32px;
 
   color: #777777;
+
+  &:hover {
+    color: ${Colors.PRIMARY};
+  }
 `;
 export const CategoryLinkSC = styled.p`
   font-weight: 700;
   font-size: 20px;
   line-height: 32px;
   cursor: pointer;
+
+  &:hover {
+    color: ${Colors.SECONDARY};
+  }
 `;
 export const LinksSC = styled.p`
   display: flex;

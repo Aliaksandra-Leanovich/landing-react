@@ -11,6 +11,7 @@ export const ContainerWithTwoBlocksSC = styled.div`
   display: grid;
   grid-template-columns: 1fr 0.8fr;
   grid-gap: 140px;
+  margin-bottom: 56px;
 
   ${media.LAPTOP} {
     grid-template-columns: 1fr;
@@ -22,19 +23,17 @@ export const ContainerWithTwoBlocksSC = styled.div`
 `;
 
 export const ContainerDescriptionSC = styled.div`
-  padding: 56px 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   max-width: 568px;
   width: 100%;
+  row-gap: 16px;
 `;
 export const Block = styled.div`
   height: 432px;
 
   background-color: #62626224;
-`;
-export const BlockImages = styled.div`
-  height: 93px;
-  background-color: #8c8c8c;
-  margin-top: 56px;
 `;
 
 export const WrapperSC = styled.div`
@@ -65,12 +64,8 @@ export const CircleSC = styled.div`
   background: #1c3d5b;
 `;
 
-export const DescriptionContainerSC = styled.div`
-  margin-top: 16px;
-`;
-
 export const ContainerButtonsSC = styled.div`
   display: flex;
   column-gap: 24px;
-  margin-top: 40px;
+  margin-top: 24px;
 `;

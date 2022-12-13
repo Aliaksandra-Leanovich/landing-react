@@ -19,7 +19,7 @@ export const ContainerSC = styled.div`
   max-width: 1400px;
   width: 100%;
 
-  padding: 124px 170px 0;
+  padding: 124px 160px 0;
 `;
 
 export const ContainerImageSC = styled.div<IProps>`

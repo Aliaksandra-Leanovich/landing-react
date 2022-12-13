@@ -2,10 +2,11 @@ import { ButtonVariants } from "../../enums/ButtonVariants";
 import { VariantsTypography } from "../../enums/TypographyVariants";
 import { Colors } from "../../ui";
 import Typography from "../../ui/Typography";
+import { Bar } from "../Bars/Bar";
 import { Button } from "../Button/Button";
+import { SliderLogos } from "../SliderLogos/SliderLogos";
+
 import {
-  Block,
-  BlockImages,
   ContainerButtonsSC,
   ContainerDescriptionSC,
   ContainerSC,
@@ -45,10 +46,11 @@ export const MainSection = () => {
                 </Button>
               </ContainerButtonsSC>
             </ContainerDescriptionSC>
-            <Block />
+
+            <Bar />
           </ContainerWithTwoBlocksSC>
 
-          <BlockImages />
+          <SliderLogos />
         </ContainerSC>
       </WrapperSC>
     </MainContainerSC>

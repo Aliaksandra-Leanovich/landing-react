@@ -10,6 +10,7 @@ export const FormSection = () => {
   return (
     <SectionSC>
       <ContainerSC>
+        {/* <CircleSC /> */}
         <Typography variant={VariantsTypography.h3} color={Colors.INFOLIGHT}>
           An enterprise template to ramp up your company website
         </Typography>

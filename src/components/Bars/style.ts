@@ -1,0 +1,136 @@
+import styled from "@emotion/styled";
+import { Colors } from "../../ui";
+
+export interface IPropsColumn {
+  height: string;
+  background: string;
+  radius?: string;
+}
+export interface IPropsRow {
+  width?: string;
+  color: string;
+  height?: string;
+}
+
+export const WrapperSC = styled.div`
+  max-width: 494px;
+  width: 100%;
+  padding: 14px 14px 28px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(34.3553px);
+
+  border-radius: 15px;
+`;
+
+export const CirclesContainerSc = styled.div`
+  display: flex;
+  column-gap: 10px;
+`;
+export const CircleSC = styled.div<IPropsRow>`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  background-color: ${({ color }) => color};
+`;
+
+export const RowsContainerSC = styled.div`
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding-left: 14px;
+`;
+
+export const RowSC = styled.div<IPropsRow>`
+  border-radius: 14px;
+  height: ${({ height }) => height};
+
+  background-color: ${({ color }) => color};
+  width: ${({ width }) => width};
+`;
+export const Persent = styled.p`
+  font-size: 12px;
+  color: ${Colors.INFOLIGHT};
+`;
+
+export const RowContainer = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  column-gap: 14px;
+`;
+
+export const Column = styled.div<IPropsColumn>`
+  width: 9px;
+  background-color: ${({ background }) => background};
+  height: ${({ height }) => height};
+  border-radius: 12px;
+`;
+
+export const StyledBarsSC = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+`;
+export const BarsBottomSC = styled.div`
+  display: flex;
+  column-gap: 28px;
+`;
+
+export const WrapperVerticalSC = styled.div`
+  width: 192px;
+  padding: 16px 18px 20px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(34.3553px);
+
+  border-radius: 15px;
+`;
+
+export const DiagramTopSC = styled.div`
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+  grid-gap: 12px;
+  margin-top: 16px;
+`;
+export const DiagramBottomSC = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-gap: 12px;
+  padding-left: 2px;
+`;
+
+export const ContainerWithCircleANdRows = styled.div`
+  margin-top: 24px;
+
+  display: flex;
+  column-gap: 32px;
+  align-items: center;
+`;
+export const CircleMainSC = styled.div`
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 13px solid ${Colors.SECONDARY};
+`;
+export const WrapperCircleSC = styled.div`
+  width: 260px;
+  padding: 12px 16px 26px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(34.3553px);
+
+  border-radius: 15px;
+`;
+
+export const RowsCircleContainerSC = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+`;

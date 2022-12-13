@@ -1,17 +1,13 @@
-import { useState } from "react";
 import BackgroundImage from "../../assets/dropdownBackground.svg";
 import { ReactComponent as DropdowmImage } from "../../assets/dropdownImage.svg";
 import { VariantsTypography } from "../../enums/TypographyVariants";
 import Typography from "../../ui/Typography";
+import { DropdownItem } from "./DropdownItem";
 import {
   ContainerImageSC,
   ContainerInformationSC,
   ContainerSC,
   DescriptionBlockSC,
-  DropdownButtonSC,
-  DropdownContainerSC,
-  DropdownDescriptionSC,
-  DropdownSC,
   DropdownsContainerSC,
   SectionSC,
 } from "./style";
@@ -30,12 +26,6 @@ const config = [
 ];
 
 export const DropdownSection = () => {
-  const [isOpen, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(!isOpen);
-  };
-
   return (
     <SectionSC>
       <ContainerSC>
@@ -51,21 +41,7 @@ export const DropdownSection = () => {
 
           <DropdownsContainerSC>
             {config.map((item, index) => (
-              <DropdownContainerSC>
-                <DropdownSC key={index}>
-                  <Typography variant={VariantsTypography.paragraphS}>
-                    {item.title}
-                  </Typography>
-                  <DropdownButtonSC onClick={handleClick} isOpen={isOpen}>
-                    {item.image}
-                  </DropdownButtonSC>
-                </DropdownSC>
-                <DropdownDescriptionSC isOpen={isOpen}>
-                  <Typography variant={VariantsTypography.paragraphXS}>
-                    {item.description}
-                  </Typography>
-                </DropdownDescriptionSC>
-              </DropdownContainerSC>
+              <DropdownItem item={item} key={index} />
             ))}
           </DropdownsContainerSC>
         </ContainerInformationSC>

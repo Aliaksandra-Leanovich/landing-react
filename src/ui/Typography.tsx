@@ -47,12 +47,12 @@ const variantTypography = {
     line-height: 64px;
   `,
   h3: css`
-    font-weight: 400;
+    font-weight: 300;
     font-size: 48px;
     line-height: 72px;
   `,
   h4: css`
-    font-weight: 400;
+    font-weight: 300;
     font-size: 36px;
     line-height: 56px;
   `,

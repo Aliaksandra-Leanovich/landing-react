@@ -12,7 +12,9 @@ import { Button } from "../Button/Button";
 import {
   AdvantageSC,
   AdvantagesContainerSC,
+  BlockWithCirclSC,
   CheckImgSC,
+  CircleSC,
   Column,
   ContainerBlocksSC,
   ContainerDiagramSC,
@@ -23,7 +25,11 @@ import {
   DescriptionSC,
   DiagramBottomSC,
   DiagramTopSC,
+  DotSC,
   ImageContainerSC,
+  PersentsBlockSC,
+  PersentsContainerSC,
+  PersentTextSC,
   SectionSC,
   TextContainerSC,
   TitleContainerSC,
@@ -98,10 +104,13 @@ export const ConnectSection = () => {
         </ContainerBlocksSC>
         <ContainerBlocksSC>
           <TextContainerSC>
-            <Typography variant={VariantsTypography.h4}>
-              We connect our customers with the best, and help them keep up-and
-              stay open.
-            </Typography>
+            <TitleContainerSC>
+              <Typography variant={VariantsTypography.h4}>
+                We connect our customers with the best, and help them keep
+                up-and stay open.
+              </Typography>
+            </TitleContainerSC>
+
             <DescriptionBlockSC>
               <AdvantagesContainerSC>
                 {config.map((item) => (
@@ -115,7 +124,26 @@ export const ConnectSection = () => {
               </AdvantagesContainerSC>
             </DescriptionBlockSC>
           </TextContainerSC>
-          <ImageContainerSC height="524px" background={ConnectImg2} />
+          <ContainerImageAndDiagramSC>
+            <ImageContainerSC height="524px" background={ConnectImg2} />
+            <BlockWithCirclSC>
+              <CircleSC />
+              <PersentsBlockSC>
+                <PersentsContainerSC>
+                  <DotSC background={Colors.LIGHTBLUE} />
+                  <PersentTextSC>35% - Agile Development</PersentTextSC>
+                </PersentsContainerSC>
+                <PersentsContainerSC>
+                  <DotSC background={Colors.SECONDARY} />
+                  <PersentTextSC>30% - Investor bandwidth</PersentTextSC>
+                </PersentsContainerSC>
+                <PersentsContainerSC>
+                  <DotSC background={Colors.GRAY} />
+                  <PersentTextSC>35% - A/B testing</PersentTextSC>
+                </PersentsContainerSC>
+              </PersentsBlockSC>
+            </BlockWithCirclSC>
+          </ContainerImageAndDiagramSC>
         </ContainerBlocksSC>
       </ContainerSC>
     </SectionSC>

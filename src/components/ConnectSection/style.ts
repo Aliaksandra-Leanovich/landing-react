@@ -4,7 +4,7 @@ import { IPropsStyle } from "./types";
 
 interface IProps {
   background: Colors;
-  height: string;
+  height?: string;
   radius?: string;
 }
 
@@ -21,7 +21,7 @@ export const ContainerSC = styled.div`
   max-width: 1400px;
   width: 100%;
 
-  padding: 0 100px;
+  padding: 0 100px 126px;
 `;
 
 export const ContainerBlocksSC = styled.div`
@@ -146,7 +146,7 @@ export const ContainerDiagramSC = styled.div`
 
   padding: 40px;
 
-  background: #ffffff;
+  background: ${Colors.INFOLIGHT};
   box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
 `;
@@ -173,4 +173,47 @@ export const Column = styled.div<IProps>`
   background-color: ${({ background }) => background};
   height: ${({ height }) => height};
   border-radius: ${({ radius }) => radius};
+`;
+
+export const BlockWithCirclSC = styled.div`
+  position: absolute;
+  top: 310px;
+  left: 60px;
+
+  padding: 48px 56px;
+  background: ${Colors.INFOLIGHT};
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+`;
+
+export const CircleSC = styled.div`
+  width: 174px;
+  height: 174px;
+  border-radius: 50%;
+  border: 24px solid ${Colors.PRIMARY};
+`;
+
+export const PersentsBlockSC = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 22px;
+`;
+
+export const PersentsContainerSC = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+`;
+export const DotSC = styled.div<IProps>`
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  background-color: ${({ background }) => background};
+`;
+export const PersentTextSC = styled.p`
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Manrope";
+  font-style: normal;
 `;
