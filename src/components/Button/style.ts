@@ -34,9 +34,10 @@ export const ButtonSC = styled.button<Pick<IButton, "variant">>`
 
   padding: 16px 56px;
 
-  transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out, border-color 0.5s ease-out;
 
   &:hover {
     background-color: ${Colors.LIGHTBLUE};
+    border-color: transparent;
   }
 `;

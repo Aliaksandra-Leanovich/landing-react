@@ -1,7 +1,8 @@
 import { VariantsTypography } from "../../enums/TypographyVariants";
+import { routes } from "../../routes";
 import { Colors } from "../../ui";
 import Typography from "../../ui/Typography";
-import { Button, ContainerSC, LinkSC } from "./style";
+import { Link, ContainerSC, LinkSC } from "./style";
 
 const config = [
   {
@@ -33,12 +34,7 @@ export const Navigation = () => {
         </LinkSC>
       ))}
 
-      <Button
-        // handleClick={handleClick}
-        type="submit"
-      >
-        Log in
-      </Button>
+      <Link href={routes.LOGIN}>Log in</Link>
     </ContainerSC>
   );
 };

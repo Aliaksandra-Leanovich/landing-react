@@ -7,7 +7,7 @@ export const ContainerSC = styled.div`
   align-items: center;
   column-gap: 40px;
 `;
-export const Button = styled.button`
+export const Link = styled.a`
   padding: 8px 40px;
   background: ${Colors.INFOLIGHT};
 
@@ -16,6 +16,12 @@ export const Button = styled.button`
   line-height: 24px;
 
   color: #0a2640;
+
+  transition: background-color 0.5s ease-out;
+
+  &:hover {
+    background-color: ${Colors.SECONDARY};
+  }
 `;
 
 export const LinkSC = styled.a`
