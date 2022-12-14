@@ -6,8 +6,14 @@ import { validationSchema } from "../../helper";
 import { Colors, Typography } from "../../ui";
 import { db } from "../../utils/firebase";
 import { Button } from "../Button";
-import { Input } from "../Input";
-import { ContainerInputSC, ContainerSC, FormSC, SectionSC } from "./style";
+
+import {
+  ContainerInputSC,
+  ContainerSC,
+  FormSC,
+  Input,
+  SectionSC,
+} from "./style";
 import { IUserForm } from "./types";
 
 export const FormSection = () => {
@@ -18,9 +24,7 @@ export const FormSection = () => {
     getValues,
     control,
     formState: { errors },
-  } = useForm<IUserForm>({
-    resolver: yupResolver(validationSchema),
-  });
+  } = useForm();
 
   const addUser = async (email: string) => {
     try {
@@ -33,9 +37,8 @@ export const FormSection = () => {
     }
   };
   const onSubmit = () => {
-    reset();
     const { email } = getValues();
-    // console.log(email);
+    console.log(email);
     addUser(email);
   };
 
@@ -53,10 +56,11 @@ export const FormSection = () => {
               render={({ field: { onChange, value } }) => (
                 <Input
                   type="email"
-                  label="email"
+                  // label="email"
+                  // onChange={onChange}
                   value={value}
-                  errors={errors.email?.message}
-                  register={register}
+                  // errors={errors.email?.message}
+                  {...register("email")}
                   placeholder="Enter your email"
                 />
               )}

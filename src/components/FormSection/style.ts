@@ -35,3 +35,19 @@ export const FormSC = styled.form`
   margin-top: 50px;
   column-gap: 24px;
 `;
+
+export const Input = styled.input`
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+
+  padding: 12px 32px;
+  width: 100%;
+
+  border: 2px solid #ffffff;
+  border-radius: 240px;
+
+  &:focus {
+    outline: none;
+  }
+`;

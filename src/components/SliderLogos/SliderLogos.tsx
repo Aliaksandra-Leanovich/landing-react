@@ -19,8 +19,8 @@ export const SliderLogos = () => {
         //   disableOnInteraction: false,
         // }}
         speed={3000}
-        centeredSlides={true}
-        watchSlidesProgress={true}
+        // centeredSlides={true}
+        // watchSlidesProgress={true}
         breakpoints={{
           1152: {
             slidesPerView: 6,
@@ -66,7 +66,7 @@ export const SliderLogos = () => {
 };
 
 export const CustomSwiperSC = styled(Swiper)`
-  .swiper-slide {
+  /* .swiper-slide {
     opacity: 0.4;
   }
 
@@ -75,7 +75,7 @@ export const CustomSwiperSC = styled(Swiper)`
   }
   .swiper-slide-active {
     opacity: 1;
-  }
+  } */
 
   width: 100%;
 `;
