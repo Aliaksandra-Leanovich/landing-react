@@ -28,7 +28,6 @@ const config = [
     link: {
       image: ArrowRight,
       text: "Explore page",
-      link: `${routes.EXPLORE}`,
     },
   },
   {
@@ -38,7 +37,6 @@ const config = [
     link: {
       image: ArrowRight,
       text: "Explore page",
-      link: `${routes.EXPLORE}`,
     },
   },
   {
@@ -48,7 +46,6 @@ const config = [
     link: {
       image: ArrowRight,
       text: "Explore page",
-      link: `${routes.EXPLORE}`,
     },
   },
 ];
