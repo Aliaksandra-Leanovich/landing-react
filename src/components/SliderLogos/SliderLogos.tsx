@@ -7,20 +7,15 @@ import { ReactComponent as PrestoLogo } from "../../assets/PressLogo .svg";
 
 export const SliderLogos = () => {
   return (
-    <>
+    <WrapperSC>
+      <LeftBlockSC />
+      <RightBlockSC />
       <CustomSwiperSC
         cssMode={true}
         mousewheel={true}
         slidesPerView={3}
         spaceBetween={66}
         keyboard={true}
-        // autoplay={{
-        //   delay: 1000,
-        //   disableOnInteraction: false,
-        // }}
-        speed={3000}
-        // centeredSlides={true}
-        // watchSlidesProgress={true}
         breakpoints={{
           1152: {
             slidesPerView: 6,
@@ -61,23 +56,46 @@ export const SliderLogos = () => {
           </LogoContainerSC>
         </SwiperSlide>
       </CustomSwiperSC>
-    </>
+    </WrapperSC>
   );
 };
+export const WrapperSC = styled.div`
+  position: relative;
+  width: 100%;
+`;
 
 export const CustomSwiperSC = styled(Swiper)`
-  /* .swiper-slide {
-    opacity: 0.4;
-  }
-
-  .swiper-slide-visible {
-    opacity: 1;
-  }
-  .swiper-slide-active {
-    opacity: 1;
-  } */
+  z-index: 0 !important;
 
   width: 100%;
+`;
+
+export const LeftBlockSC = styled.div`
+  width: 40%;
+  position: absolute;
+  height: 48px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(10, 38, 64, 1) 22%,
+    rgba(255, 255, 255, 0) 53%
+  );
+`;
+export const RightBlockSC = styled.div`
+  width: 40%;
+  position: absolute;
+  height: 48px;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 47%,
+    rgba(10, 38, 64, 1) 78%
+  );
 `;
 export const LogoContainerSC = styled.div`
   width: 144px;
