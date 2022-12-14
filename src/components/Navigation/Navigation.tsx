@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ButtonVariants, LinkVariants } from "../../enums";
+import { LinkVariants } from "../../enums";
 import { routes } from "../../routes";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getUserInfo } from "../../store/selectors";
 import { unsetUser } from "../../store/slices/userSlice";
-import { Button } from "../Button";
 import { Link } from "../Link";
 import { LoginForm } from "../LoginForm";
 import { Modal } from "../Modal/Modal";
@@ -58,16 +57,12 @@ export const Navigation = () => {
       <>
         {isAuthorized ? (
           <>
-            <Link to={routes.USERS} variant={LinkVariants.primaryGreenLarge}>
+            <Link to={routes.USERS} variant={LinkVariants.primaryWhiteSmall}>
               Users
             </Link>
-            <Button
-              variant={ButtonVariants.primaryWhiteSmall}
-              type="button"
-              handleClick={handleLogout}
-            >
-              Log out
-            </Button>
+            <ButtonSC type="button" onClick={handleLogout}>
+              Logout
+            </ButtonSC>
           </>
         ) : (
           <ButtonSC onClick={showModal}>Log in</ButtonSC>

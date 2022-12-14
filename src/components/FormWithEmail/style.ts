@@ -47,3 +47,25 @@ export const ErrorMessageSC = styled.div`
     fill: ${Colors.RED};
   }
 `;
+
+export const IconSC = styled.img`
+  display: block;
+  height: 26px;
+`;
+
+export const ButtonSC = styled.button`
+  width: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: ${Colors.SECONDARY};
+  border: 2px solid ${Colors.SECONDARY};
+  color: ${Colors.PRIMARY};
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  border-radius: 56px;
+  padding: 16px 0;
+`;

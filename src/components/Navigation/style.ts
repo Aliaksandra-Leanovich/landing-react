@@ -24,11 +24,13 @@ export const LinkSC = styled.a`
 `;
 
 export const ButtonSC = styled.button`
-  padding: 8px 40px;
+  padding: 9px 40px;
+
   background: ${Colors.INFOLIGHT};
   border: 2px solid ${Colors.INFOLIGHT};
   border-radius: 24px;
   font-weight: 700;
+  font-size: 16px;
   line-height: 24px;
 
   color: ${Colors.PRIMARY};
