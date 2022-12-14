@@ -1,20 +1,25 @@
 import { addDoc, collection } from "firebase/firestore";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { ButtonVariants } from "../../enums";
 import { db } from "../../utils/firebase";
 import { Button } from "../Button";
-import { ContainerInputSC, FormSC, Input } from "./style";
+import { ContainerInputSC, ErrorMessageSC, FormSC, Input } from "./style";
 
 export const FormWithEmail = () => {
   const { register, handleSubmit, reset, getValues, control } = useForm();
+
+  const [message, setMessage] = useState("");
 
   const addUser = async (email: string) => {
     try {
       const docRef = await addDoc(collection(db, "users"), {
         email: email,
       });
+      setMessage("Thank you!");
       console.log("Document written with ID: ", docRef.id);
     } catch (event) {
+      setMessage("Something went wrong... Please try again");
       console.error("Error adding document: ", event);
     }
   };
@@ -24,6 +29,9 @@ export const FormWithEmail = () => {
     addUser(email);
     reset();
   };
+  const handleChage = () => {
+    setMessage("");
+  };
 
   return (
     <FormSC onSubmit={handleSubmit(onSubmit)}>
@@ -31,7 +39,7 @@ export const FormWithEmail = () => {
         <Controller
           name="email"
           control={control}
-          render={() => (
+          render={({ field: { onChange } }) => (
             <Input
               type="email"
               {...register("email")}
@@ -39,6 +47,7 @@ export const FormWithEmail = () => {
             />
           )}
         />
+        {/* {message && <ErrorMessageSC> {message}</ErrorMessageSC>} */}
       </ContainerInputSC>
 
       <Button variant={ButtonVariants.primaryGreenLarge}>Start now</Button>

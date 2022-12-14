@@ -58,16 +58,16 @@ export const Navigation = () => {
       <>
         {isAuthorized ? (
           <>
-            <Link to={routes.USERS} variant={LinkVariants.primaryWhiteSmall}>
+            <Link to={routes.USERS} variant={LinkVariants.primaryGreenLarge}>
               Users
             </Link>
-            {/* <Button
+            <Button
               variant={ButtonVariants.primaryWhiteSmall}
               type="button"
               handleClick={handleLogout}
             >
               Log out
-            </Button> */}
+            </Button>
           </>
         ) : (
           <ButtonSC onClick={showModal}>Log in</ButtonSC>
