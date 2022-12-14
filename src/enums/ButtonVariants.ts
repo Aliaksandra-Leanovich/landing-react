@@ -1,5 +1,8 @@
 export enum ButtonVariants {
-  primary = "primary",
-  secondary = "secondary",
-  primaryWithBorder = "primaryWithBorder",
+  primaryLarge = "primaryLarge",
+  primaryGreenLarge = "primaryGreenLarge",
+  primaryWhiteLarge = "primaryWhiteLarge",
+  secondaryLarge = "secondaryLarge",
+  secondaryWhiteLarge = "secondaryWhiteLarge",
+  primaryWhiteSmall = "primaryWhiteSmall",
 }

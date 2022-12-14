@@ -1,13 +1,15 @@
+import { useState } from "react";
 import CheckImg from "../../assets/checkImg.svg";
 import ConnectImg1 from "../../assets/connectImg1.svg";
 import ConnectImg2 from "../../assets/connectImg2.svg";
 import { ReactComponent as EyeImg } from "../../assets/eye.svg";
 import { ReactComponent as FeatherImg } from "../../assets/feather.svg";
 import { ReactComponent as SunImg } from "../../assets/sun.svg";
-import { LinkVariants, TypographyVariants } from "../../enums";
-import { routes } from "../../routes";
+import { ButtonVariants, TypographyVariants } from "../../enums";
 import { Colors, Typography } from "../../ui";
-import { Link } from "../Link";
+import { Button } from "../Button";
+import { FormWithEmail } from "../FormWithEmail/FormWithEmail";
+import { Modal } from "../Modal/Modal";
 
 import {
   AdvantageSC,
@@ -42,6 +44,13 @@ const config = [
 ];
 
 export const ConnectSection = () => {
+  const [show, setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+  };
+  const closeModal = () => {
+    setShow(false);
+  };
   return (
     <SectionSC>
       <ContainerSC>
@@ -99,9 +108,13 @@ export const ConnectSection = () => {
                 </DescriptionSC>
               ))}
             </DescriptionBlockSC>
-            <Link to={routes.EXPLORE} variant={LinkVariants.primaryLarge}>
+            <Button
+              handleClick={showModal}
+              variant={ButtonVariants.primaryLarge}
+              type="button"
+            >
               Start now
-            </Link>
+            </Button>
           </TextContainerSC>
         </ContainerBlocksSC>
         <ContainerBlocksSC>
@@ -148,6 +161,9 @@ export const ConnectSection = () => {
           </ContainerImageAndDiagramSC>
         </ContainerBlocksSC>
       </ContainerSC>
+      <Modal show={show} handleClose={closeModal} width="800px">
+        <FormWithEmail />
+      </Modal>
     </SectionSC>
   );
 };

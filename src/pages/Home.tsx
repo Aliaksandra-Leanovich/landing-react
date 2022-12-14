@@ -9,7 +9,7 @@ import { SliderSection } from "../components/SliderSection";
 
 export const Home = () => {
   return (
-    <>
+    <main>
       <Header />
       <MainSection />
       <ServicesSection />
@@ -18,6 +18,6 @@ export const Home = () => {
       <BlogSection />
       <FormSection />
       <Footer />
-    </>
+    </main>
   );
 };

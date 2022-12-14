@@ -1,8 +1,10 @@
-import { LinkVariants, TypographyVariants } from "../../enums";
-import { routes } from "../../routes";
+import { useState } from "react";
+import { ButtonVariants, TypographyVariants } from "../../enums";
 import { Colors, Typography } from "../../ui";
 import { Bar } from "../Bars";
-import { Link } from "../Link";
+import { Button } from "../Button";
+import { FormWithEmail } from "../FormWithEmail/FormWithEmail";
+import { Modal } from "../Modal/Modal";
 import { SliderLogos } from "../SliderLogos";
 
 import {
@@ -15,6 +17,13 @@ import {
 } from "./style";
 
 export const MainSection = () => {
+  const [show, setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+  };
+  const closeModal = () => {
+    setShow(false);
+  };
   return (
     <MainContainerSC>
       <WrapperSC id="product">
@@ -39,18 +48,20 @@ export const MainSection = () => {
               </ContainerDescriptionSC>
 
               <ContainerButtonsSC>
-                <Link
-                  to={routes.EXPLORE}
-                  variant={LinkVariants.primaryGreenLarge}
+                <Button
+                  type="button"
+                  handleClick={showModal}
+                  variant={ButtonVariants.primaryGreenLarge}
                 >
                   Buy template
-                </Link>
-                <Link
-                  to={routes.EXPLORE}
-                  variant={LinkVariants.secondaryWhiteLarge}
+                </Button>
+                <Button
+                  type="button"
+                  handleClick={showModal}
+                  variant={ButtonVariants.secondaryWhiteLarge}
                 >
                   Explore
-                </Link>
+                </Button>
               </ContainerButtonsSC>
             </ContainerDescriptionSC>
 
@@ -60,6 +71,9 @@ export const MainSection = () => {
           <SliderLogos />
         </ContainerSC>
       </WrapperSC>
+      <Modal show={show} handleClose={closeModal} width="800px">
+        <FormWithEmail />
+      </Modal>
     </MainContainerSC>
   );
 };

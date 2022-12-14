@@ -4,22 +4,72 @@ import { ButtonVariants } from "../../enums";
 import { Colors } from "../../ui";
 import { IButton } from "./types";
 
-const variantStyles = (variant = ButtonVariants.primary) =>
+const variantStyles = (variant = ButtonVariants.primaryLarge) =>
   ({
-    primary: css`
-      background-color: ${Colors.PRIMARY};
+    primaryLarge: css`
+      background: ${Colors.PRIMARY};
       border: 2px solid ${Colors.PRIMARY};
       color: ${Colors.INFOLIGHT};
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      border-radius: 56px;
+      padding: 16px 56px;
     `,
-    secondary: css`
-      background-color: ${Colors.SECONDARY};
+    primaryGreenLarge: css`
+      background: ${Colors.SECONDARY};
       border: 2px solid ${Colors.SECONDARY};
       color: ${Colors.PRIMARY};
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      border-radius: 56px;
+      padding: 16px 56px;
     `,
-    primaryWithBorder: css`
-      background-color: ${Colors.PRIMARY};
+    primaryWhiteLarge: css`
+      background: ${Colors.INFOLIGHT};
+      border: 2px solid ${Colors.INFOLIGHT};
+      color: ${Colors.PRIMARY};
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      border-radius: 56px;
+      padding: 16px 56px;
+    `,
+    secondaryLarge: css`
+      background: transparent;
+      border: 2px solid ${Colors.PRIMARY};
+      color: ${Colors.PRIMARY};
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      border-radius: 56px;
+      padding: 16px 56px;
+    `,
+    secondaryWhiteLarge: css`
+      background: transparent;
       border: 2px solid ${Colors.INFOLIGHT};
       color: ${Colors.INFOLIGHT};
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+      border-radius: 56px;
+      padding: 16px 56px;
+    `,
+    primaryWhiteSmall: css`
+      padding: 8px 40px;
+      background: ${Colors.INFOLIGHT};
+      border: 2px solid ${Colors.INFOLIGHT};
+      border-radius: 24px;
+      font-weight: 700;
+      line-height: 24px;
+
+      color: ${Colors.PRIMARY};
     `,
   }[variant]);
 

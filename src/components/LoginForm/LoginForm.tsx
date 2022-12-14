@@ -12,7 +12,7 @@ import { app } from "../../utils";
 import { Button } from "../Button";
 import { Input } from "../Input";
 import { IUserForm } from "./types";
-import { ContainerFormSC, StyledFormSC } from "./styles";
+import { StyledFormSC } from "./styles";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
@@ -52,60 +52,58 @@ export const LoginForm = () => {
   };
 
   return (
-    <ContainerFormSC>
-      <StyledFormSC onSubmit={handleSubmit(onSubmit)}>
-        <Controller
-          name="email"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <Input
-              type="email"
-              label="email"
-              value={value}
-              onChange={onChange}
-              errors={errors.email?.message || error}
-              register={register}
-              placeholder="Enter your email"
-            />
-          )}
-          rules={{
-            required: false,
-            onChange: () => {
-              if (errors) {
-                clearErrors("password");
-                clearErrors("email");
-              }
-            },
-          }}
-        />
-        <Controller
-          name="password"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <Input
-              type="password"
-              label="password"
-              value={value}
-              onChange={onChange}
-              errors={errors.password?.message}
-              register={register}
-              placeholder="Enter your password"
-            />
-          )}
-          rules={{
-            required: false,
-            onChange: () => {
-              if (!errors) {
-                clearErrors("password");
-                clearErrors("email");
-              }
-            },
-          }}
-        />
-        <Button variant={ButtonVariants.secondary} type="submit">
-          Login
-        </Button>
-      </StyledFormSC>
-    </ContainerFormSC>
+    <StyledFormSC onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        name="email"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            type="email"
+            label="email"
+            value={value}
+            onChange={onChange}
+            errors={errors.email?.message || error}
+            register={register}
+            placeholder="Enter your email"
+          />
+        )}
+        rules={{
+          required: false,
+          onChange: () => {
+            if (errors) {
+              clearErrors("password");
+              clearErrors("email");
+            }
+          },
+        }}
+      />
+      <Controller
+        name="password"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            type="password"
+            label="password"
+            value={value}
+            onChange={onChange}
+            errors={errors.password?.message}
+            register={register}
+            placeholder="Enter your password"
+          />
+        )}
+        rules={{
+          required: false,
+          onChange: () => {
+            if (!errors) {
+              clearErrors("password");
+              clearErrors("email");
+            }
+          },
+        }}
+      />
+      <Button variant={ButtonVariants.primaryGreenLarge} type="submit">
+        Login
+      </Button>
+    </StyledFormSC>
   );
 };

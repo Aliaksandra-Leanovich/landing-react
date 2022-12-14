@@ -22,3 +22,14 @@ export const LinkSC = styled.a`
     border-bottom: 1px solid ${Colors.INFOLIGHT};
   }
 `;
+
+export const ButtonSC = styled.button`
+  padding: 8px 40px;
+  background: ${Colors.INFOLIGHT};
+  border: 2px solid ${Colors.INFOLIGHT};
+  border-radius: 24px;
+  font-weight: 700;
+  line-height: 24px;
+
+  color: ${Colors.PRIMARY};
+`;

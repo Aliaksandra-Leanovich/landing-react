@@ -1,7 +1,7 @@
-import { LinkVariants } from "../../enums";
-import { routes } from "../../routes";
-import { Link } from "../Link";
-import { ContainerSC, LinkSC } from "./style";
+import { useState } from "react";
+import { LoginForm } from "../LoginForm";
+import { Modal } from "../Modal/Modal";
+import { ButtonSC, ContainerSC, LinkSC } from "./style";
 
 const config = [
   {
@@ -20,6 +20,14 @@ const config = [
 ];
 
 export const Navigation = () => {
+  const [show, setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+  };
+  const closeModal = () => {
+    setShow(false);
+  };
+
   return (
     <ContainerSC>
       {config.map((item, index) => (
@@ -27,10 +35,10 @@ export const Navigation = () => {
           {item.title}
         </LinkSC>
       ))}
-
-      <Link to={routes.LOGIN} variant={LinkVariants.primaryWhiteSmall}>
-        Log in
-      </Link>
+      <Modal show={show} handleClose={closeModal}>
+        <LoginForm />
+      </Modal>
+      <ButtonSC onClick={showModal}>Log in</ButtonSC>
     </ContainerSC>
   );
 };

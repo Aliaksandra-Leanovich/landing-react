@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ArrowRight from "../../assets/arrowRight.svg";
 import ExploreImg1 from "../../assets/exploreImg1.svg";
 import ExploreImg2 from "../../assets/exploreImg2.svg";
@@ -5,6 +6,8 @@ import ExploreImg3 from "../../assets/exploreImg3.svg";
 import { TypographyVariants } from "../../enums";
 import { routes } from "../../routes";
 import { Colors, Typography } from "../../ui";
+import { FormWithEmail } from "../FormWithEmail/FormWithEmail";
+import { Modal } from "../Modal/Modal";
 import {
   BlockSC,
   ContainerOfBlocksSC,
@@ -51,6 +54,14 @@ const config = [
 ];
 
 export const ExploreSection = () => {
+  const [show, setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+  };
+  const closeModal = () => {
+    setShow(false);
+  };
+
   return (
     <SectionSC>
       <ContainerSC>
@@ -74,13 +85,16 @@ export const ExploreSection = () => {
                 {item.description}
               </Typography>
               <LinkBlockSC>
-                <LinkSC to={item.link.link}>{item.link.text}</LinkSC>
+                <LinkSC onClick={showModal}>{item.link.text}</LinkSC>
                 <img src={item.link.image} alt="arrow" />
               </LinkBlockSC>
             </BlockSC>
           ))}
         </ContainerOfBlocksSC>
       </ContainerSC>
+      <Modal show={show} handleClose={closeModal} width="800px">
+        <FormWithEmail />
+      </Modal>
     </SectionSC>
   );
 };

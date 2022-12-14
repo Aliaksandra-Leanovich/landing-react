@@ -82,7 +82,7 @@ export const LinkBlockSC = styled.div`
   }
 `;
 
-export const LinkSC = styled(Link)`
+export const LinkSC = styled.button`
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
