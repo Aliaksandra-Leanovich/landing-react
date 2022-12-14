@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../utils/firebase";
@@ -23,12 +24,36 @@ export const EmailsTable = () => {
       .catch((error) => console.log(error.message));
   };
   return (
-    <div>
-      {emails?.map((email) => (
-        <div key={email.id}>
-          <p>{email.data.email} </p>
-        </div>
-      ))}
-    </div>
+    <WrapperSC>
+      <ContainerSC>
+        {emails?.map((email) => (
+          <div key={email.id}>
+            <p>{email.data.email} </p>
+          </div>
+        ))}
+      </ContainerSC>
+    </WrapperSC>
   );
 };
+
+export const WrapperSC = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 12px;
+`;
+
+export const ContainerSC = styled.div`
+  max-width: 1400px;
+  width: 100%;
+
+  padding: 0 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;

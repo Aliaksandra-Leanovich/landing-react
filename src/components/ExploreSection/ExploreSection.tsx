@@ -4,7 +4,6 @@ import ExploreImg1 from "../../assets/exploreImg1.svg";
 import ExploreImg2 from "../../assets/exploreImg2.svg";
 import ExploreImg3 from "../../assets/exploreImg3.svg";
 import { TypographyVariants } from "../../enums";
-import { routes } from "../../routes";
 import { Colors, Typography } from "../../ui";
 import { FormWithEmail } from "../FormWithEmail/FormWithEmail";
 import { Modal } from "../Modal/Modal";
