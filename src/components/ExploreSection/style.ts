@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
 import { Colors, media } from "../../ui";
 
 export const SectionSC = styled.section`

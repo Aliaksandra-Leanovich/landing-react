@@ -11,10 +11,10 @@ import { setUserToken } from "../../store/slices/userSlice";
 import { app } from "../../utils";
 import { Button } from "../Button";
 import { Input } from "../Input";
-import { IUserForm } from "./types";
 import { StyledFormSC } from "./styles";
+import { IUserForm } from "./types";
 
-export const LoginForm = () => {
+export const LoginForm = ({ setShow }: any) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -45,6 +45,7 @@ export const LoginForm = () => {
         const token = await userCredential.user.getIdToken();
         setUserTokenToStorage(token);
         navigate(routes.HOME);
+        setShow(false);
       })
       .catch((error) => {
         setError(getAuthError(error.code));

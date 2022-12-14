@@ -1,4 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ButtonVariants, LinkVariants } from "../../enums";
+import { routes } from "../../routes";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getUserInfo } from "../../store/selectors";
+import { unsetUser } from "../../store/slices/userSlice";
+import { Button } from "../Button";
+import { Link } from "../Link";
 import { LoginForm } from "../LoginForm";
 import { Modal } from "../Modal/Modal";
 import { ButtonSC, ContainerSC, LinkSC } from "./style";
@@ -20,12 +28,21 @@ const config = [
 ];
 
 export const Navigation = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { isAuthorized } = useAppSelector(getUserInfo);
+
   const [show, setShow] = useState(false);
   const showModal = () => {
     setShow(true);
   };
   const closeModal = () => {
     setShow(false);
+  };
+
+  const handleLogout = () => {
+    dispatch(unsetUser());
+    navigate(routes.HOME);
   };
 
   return (
@@ -36,9 +53,26 @@ export const Navigation = () => {
         </LinkSC>
       ))}
       <Modal show={show} handleClose={closeModal}>
-        <LoginForm />
+        <LoginForm setShow={setShow} />
       </Modal>
-      <ButtonSC onClick={showModal}>Log in</ButtonSC>
+      <>
+        {isAuthorized ? (
+          <>
+            <Link to={routes.USERS} variant={LinkVariants.primaryWhiteSmall}>
+              Users
+            </Link>
+            {/* <Button
+              variant={ButtonVariants.primaryWhiteSmall}
+              type="button"
+              handleClick={handleLogout}
+            >
+              Log out
+            </Button> */}
+          </>
+        ) : (
+          <ButtonSC onClick={showModal}>Log in</ButtonSC>
+        )}
+      </>
     </ContainerSC>
   );
 };
